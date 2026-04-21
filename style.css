@@ -1,0 +1,962 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Logo styling */
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+body {
+  background-color: #33a7ef;
+}
+
+h1 {
+  color: rgb(5, 5, 114);
+  font-size: 40px;
+  font-family: "Gravitas One", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+h2 {
+  color: rgb(132, 207, 244);
+  font-size: 20px;
+}
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styling */
+header {
+  background-color: #0080ff;
+  padding: 0.5rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 40, 100, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 2rem;
+}
+
+/* Logo Styling */
+.logo h1 {
+  color: #ecf0f1;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #e3ebf8;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects for Navigation Links */
+.nav-links a:hover {
+  color: #ffffff;
+  border-bottom: white solid 3px;
+  transition: all 0.1s ease-in-out;
+}
+
+/* Active/Current Page Styling */
+.nav-links a.active {
+  color: #0057ad;
+  border-bottom: #0057ad 3px;
+}
+
+
+/* Improve spacing and readability */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+/* On smaller screens, reduce gap */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    font-size: 1rem;
+  }
+  
+  .logo h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Dropdown menu for Labs */
+.nav-links li {
+  position: relative;
+}
+
+.nav-links .dropdown-toggle {
+  color: #ecf0f1;
+  text-decoration: none;
+  padding-bottom: 0.25rem;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.nav-links .dropdown-toggle:hover {
+  color: #3498db;
+  border-bottom: 3px solid #3498db;
+}
+
+/* position the menu flush with the toggle so there's no gap to lose hover */
+.nav-links .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* directly below the parent <li> */
+  left: 0;
+  background: #ffffff;
+  color: #333333;
+  list-style: none;
+  padding: 0.25rem 0;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  min-width: 160px;
+  z-index: 200;
+}
+
+.nav-links .dropdown-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333333;
+  text-decoration: none;
+}
+
+.nav-links .dropdown-menu li a:hover {
+  background: #f1f1f1;
+  color: #000;
+}
+
+.nav-links .dropdown:hover .dropdown-menu,
+.nav-links .dropdown-menu:hover {
+  display: block;
+}
+
+/* make the entire dropdown container keep showing while hovering anywhere inside it */
+.nav-links .dropdown {
+  /* ensure the <li> also includes the space under the toggle, avoids accidental mouseout */
+  padding-bottom: 0.25rem;
+}
+
+/* Keep-open class for JS-driven hover persistence */
+.nav-links .dropdown.open .dropdown-menu {
+  display: block;
+}
+
+/* Sidebar menu */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;  /* 1/4 and 3/4 */
+  gap: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  position: sticky;
+  top: calc(60px + 2rem);
+  height: fit-content;
+  margin-top: 2rem;
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 50;
+}
+
+.content {
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  list-style: none;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+/* The Highlight Class */
+.sidebar a.active {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.page-section {
+  min-height: 100vh; /* Ensures sections are long enough */
+  border-bottom: 1px solid #ccc;
+  scroll-margin-top: calc(60px + 2rem);
+}
+
+/* Responsive - single column on mobile */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer Styling */
+footer {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 4rem;
+  background-color: #49a4ff;
+  color: #ecf0f1;
+  padding: 3rem 2rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.footer-content .footer-section:nth-child(2) {
+  margin-left: auto;
+  text-align: right;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-section h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  transition: all 0.1s ease-in-out;
+  color: white;
+  border-bottom: white solid 2px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #e2f0fd;
+}
+
+/* Main Content Styling */
+
+/*Additional spacing and layout adjustments so that footer reaches bottom of page no matter what*/
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/*styling main content area with max-width and padding for readability */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 400px);
+}
+
+/* Ensures content doesn't touch edges on small screens */
+@media (max-width: 768px) {
+  main {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Top of Page Button */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  padding: 12px 20px;
+  background-color: #0080ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#myBtn:hover {
+  background-color: #0080ff;
+}
+
+/* Section Button (same styling as #myBtn but inline) */
+.section-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.section-button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-section {
+    margin-bottom: 2rem;
+  }
+  
+  footer {
+    padding: 2rem 1rem 1rem;
+  }
+}
+
+/* Body and HTML Setup */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make main content grow to push footer down */
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+
+/* Gallery Section */
+.gallery {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.gallery h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+}
+
+/* CSS Grid Layout - 2 Column Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Responsive Gallery */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .gallery h2 {
+    font-size: 2rem;
+  }
+  
+  .gallery-item img {
+    height: 250px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .gallery-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #434c73 0%, #3b13cb 100%);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ecf0f1;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* Lab Page Styling */
+.page-header {
+  text-align: left;
+  padding: 10rem 10rem 4rem;
+  background-color: #49a4ff;
+  color: rgb(92, 162, 255);
+  border-radius: 0px;
+  margin-bottom: 3rem;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.header-description {
+  font-size: 1.1rem;
+  color: #ecf0f1;
+  font-style: italic;
+}
+
+.lab-content {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+}
+
+.learning-section {
+  background-color: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.learning-section h3 {
+  color: #667eea;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.learning-section ul {
+  margin-left: 2rem;
+  line-height: 1.8;
+}
+
+.learning-section li {
+  margin-bottom: 0.5rem;
+}
+
+/* Screenshot Gallery */
+.lab-images {
+  margin-bottom: 4rem;
+}
+
+.lab-images h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.screenshot-grid figure {
+  margin: 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.screenshot-grid figure:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.screenshot-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.screenshot-grid figcaption {
+  padding: 1rem;
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  background-color: #f8f9fa;
+}
+
+/* References Section */
+.references {
+  max-width: 1500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.references h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.references p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.references p:last-child {
+  margin-bottom: 0;
+}
+
+.spaced-list li {
+  list-style: none;
+  margin-bottom: 10px; /* Adjust the value for more or less space */
+}
+
+/* Scale all images*/
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Scale all images*/
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Style the download PDF button */
+    #pdfBtn {
+    border: none;
+    outline: none;
+    background-color: #0080ff;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    }
+    #pdfBtn:hover {
+    background-color: #85a5e8;
+    }
+
+/* Style the top of page button */
+    #myBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #0080ff;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    }
+    #myBtn:hover {
+    background-color: #85a5e8;
+    }
+    html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    }
+
+/* Images zoom in when clicked and have a blurred background - Lightbox Modal Styling */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+  color: #3498db;
+}
+
+.screenshot-grid img {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.screenshot-grid img:hover {
+  transform: scale(1.02);
+}
+
+ /* Scrolly - layout = Basic reset */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+body {
+font-family: Arial, sans-serif;
+}
+
+
+/* Main 2-column layout */
+.scrolly-container {
+display: flex;
+min-height: 100vh;
+}
+
+/* Left side (visual stage) */
+.visual-column {
+position: fixed;
+left: 0;
+top: 0;
+width: 50%;
+height: 100vh;
+background: white;
+padding: 24px;
+}
+
+/* Right side (story) */
+.text-column {
+margin-left: 50%;
+width: 50%;
+padding: 25px;
+background: #f3f3f3;
+}
+
+/* Stacked images */
+.visual-stack {
+position: relative;
+width: 100%;
+height: 100%;
+}
+
+/* Each visual sits on top of each other */
+.visual {
+position: absolute;
+inset: 0;
+opacity: 0;
+transition: opacity 0.7s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* The active one shows */
+.visual.active {
+opacity: 1;
+}
+
+.visual img {
+max-width: 90%;
+max-height: 90%;
+object-fit: contain;
+}
+
+/* story steps spacing */
+.story-step {
+min-height: 90vh;
+padding: 200px 0;
+}
+
+.story-step h2 {
+font-size: 32px;
+margin-bottom: 16px;
+}
+
+.story-step p {
+font-size: 18px;
+margin-bottom: 12px;
+}
+
+.spacer {
+height: 10vh;
+}
+
+/* Makes image container a positioning reference */
+.image-stage {
+position: relative;
+display: inline-block;
+}
+
+/* Ensure main image behaves predictably */
+.main-image {
+display: block;
+max-width: 90%;
+max-height: 90%;
+object-fit: contain;
+}
+
+/* Hotspot container sits on top of image */
+.hotspot {
+position: absolute;
+
+ /* MOVE THESE VALUES TO POSITION HOTSPOT */
+left: 50%;
+top: 50%;
+
+transform: translate(-50%, -50%);
+cursor: pointer;
+z-index: 5;
+}
+
+/* Size of hotspot icon */
+.hotspot-icon {
+width: 36px;
+height: 36px;
+display: block;
+}
+
+/* Label styling */
+.hotspot-label {
+position: absolute;
+ left: 120%; /* places it to the right of icon */
+top: 50%;
+transform: translateY(-50%);
+
+width: 220px;
+padding: 10px 12px;
+
+background: rgba(255, 255, 255, 0.95);
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+font-size: 14px;
+line-height: 1.4;
+
+opacity: 0;
+ pointer-events: none; /* prevents flicker */
+transition: opacity 0.25s ease;
+}
+
+/* THE MAGIC: reveal on hover */
+.hotspot:hover .hotspot-label {
+opacity: 1;
+}
+
