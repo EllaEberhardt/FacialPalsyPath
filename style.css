@@ -51,58 +51,64 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0.5rem 2rem;
+  position: relative; /* needed for dropdown positioning */
 }
 
 /* Navigation Links */
 .nav-links {
   display: flex;
   list-style: none;
+  transition: all 0.3s ease;
   gap: 2rem;
 }
 
 .nav-links a {
   color: #e3ebf8;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
   padding-bottom: 0.25rem;
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
 }
 
-/* Hover Effects for Navigation Links */
+/* Hover Effects */
 .nav-links a:hover {
   color: #ffffff;
   border-bottom: white solid 3px;
-  transition: all 0.1s ease-in-out;
 }
 
-/* Active/Current Page Styling */
+/* Active Page */
 .nav-links a.active {
   color: #0057ad;
   border-bottom: #0057ad 3px;
 }
 
-
-/* Improve spacing and readability */
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-
-/* On smaller screens, reduce gap */
+/* 📱 Mobile breakpoint */
 @media (max-width: 768px) {
+
+  /* Hide normal nav */
   .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    flex-direction: column;
+    background-color: #0080ff;
+    padding: 1rem;
+    border-radius: 10px;
     gap: 1rem;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
-  
+
+  /* Show when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Slight font tweaks */
   .nav-links a {
     font-size: 1rem;
-  }
-  
-  .logo h1 {
-    font-size: 1.2rem;
   }
 }
 
@@ -221,8 +227,9 @@ nav {
 }
 
 .page-section {
-  min-height: 100vh; /* Ensures sections are long enough */
-  border-bottom: 1px solid #ccc;
+  min-height: auto; /* Ensures sections are long enough */
+  border-bottom: 2px solid #2c73ff;
+  padding: clamp(2rem, 5vw, 4rem) 0;
   scroll-margin-top: calc(60px + 2rem);
 }
 
@@ -545,7 +552,7 @@ main {
 /* Lab Page Styling */
 .page-header {
   text-align: left;
-  padding: 18rem 10rem 4rem;
+  padding: clamp(6rem, 12vw, 18rem) clamp(1rem, 5vw, 10rem) 4rem;
   background-color: #49a4ff;
   color: rgb(92, 162, 255);
   border-radius: 0px;
@@ -553,9 +560,9 @@ main {
   width: 100vw;
   position: relative;
   left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  transform: translateX(-50%);
+  margin-left: 0;
+  margin-right: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -563,7 +570,7 @@ main {
 }
 
 .page-header h1 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   margin-bottom: 0.5rem;
   color: white;
 }

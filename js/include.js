@@ -1,3 +1,4 @@
+
 async function loadIncludes() {
  // Find every element that has a data-include attribute
 const targets = document.querySelectorAll("[data-include]");
