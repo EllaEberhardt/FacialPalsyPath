@@ -1,20 +1,20 @@
+/*Import Google font for footer and header*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* Logo styling */
+/* ----------- Logo styling ----------- */
+/* Container for logo link, aligns logo vertically */
 .logo-link {
   display: flex;
   align-items: center;
 }
 
+/* Controls logo image size */
 .logo {
-  height: 80px;
-  width: auto;
+  max-height: 50px;
+  width: 100px;
 }
 
-body {
-  background-color: #33a7ef;
-}
-
+/* ----------- Headings ----------- */
 h1 {
   color: rgb(5, 5, 114);
   font-size: 40px;
@@ -27,25 +27,31 @@ h2 {
   font-size: 20px;
 }
 
-/* Reset default styles */
+/* ----------- Global Styles ----------- */
+/* Reset default browser spacing and sets box model */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Header Styling */
+/* ----------- Header Styling----------- */
+/* Fixes header bar to top of page */
 header {
   background-color: #0080ff;
   padding: 0.5rem 2rem;
   position: fixed;
   top: 0;
   width: 100%;
-  margin: 0;
+  min-height: 100px;
   z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 40, 100, 0.1);
 }
 
+/* Naviguation container - flexbox for horizontal layout and spacing */
 nav {
   display: flex;
   justify-content: space-between;
@@ -54,7 +60,7 @@ nav {
   position: relative; /* needed for dropdown positioning */
 }
 
-/* Navigation Links */
+/* ----------- Naviguation links ----------- */
 .nav-links {
   display: flex;
   list-style: none;
@@ -62,6 +68,7 @@ nav {
   gap: 2rem;
 }
 
+/* Individual link styling */
 .nav-links a {
   color: #e3ebf8;
   text-decoration: none;
@@ -71,22 +78,38 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* Hover Effects */
+/* Link Hover Effects */
 .nav-links a:hover {
   color: #ffffff;
   border-bottom: white solid 3px;
 }
 
-/* Active Page */
+/* Link Active Page indicator */
 .nav-links a.active {
   color: #0057ad;
   border-bottom: #0057ad 3px;
 }
 
+/* ----------- Mobile Header Navigation ----------- */
 /* 📱 Mobile breakpoint */
 @media (max-width: 768px) {
+  /* Adjust header padding and logo size for mobile */
+  header {
+    padding: 0.75rem 1rem;    /* tighter mobile spacing */
+  }
 
-  /* Hide normal nav */
+  .logo {
+    height: clamp(40px, 10vw, 55px); /* responsive mobile logo */
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* logo left, hamburger right */
+    align-items: center;
+  }
+
+  /* Hide normal nav, convert to dropdown menu */
   .nav-links {
     display: none;
     position: absolute;
@@ -101,22 +124,24 @@ nav {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
 
-  /* Show when active */
+  /* Show when JS toggles active */
   .nav-links.active {
     display: flex;
   }
 
-  /* Slight font tweaks */
+  /* Slight font tweaks for mobile */
   .nav-links a {
     font-size: 1rem;
   }
 }
 
-/* Dropdown menu for Labs */
+/* ----------- Dropdown Menu ----------- */
+/* Dropdown menu position relative to parent */
 .nav-links li {
   position: relative;
 }
 
+/* Dropdown toggle styling */
 .nav-links .dropdown-toggle {
   color: #ecf0f1;
   text-decoration: none;
@@ -130,6 +155,7 @@ nav {
   color: #3498db;
   border-bottom: 3px solid #3498db;
 }
+
 
 /* position the menu flush with the toggle so there's no gap to lose hover */
 .nav-links .dropdown-menu {
@@ -147,6 +173,7 @@ nav {
   z-index: 200;
 }
 
+/* Dropdown menu items */
 .nav-links .dropdown-menu li a {
   display: block;
   padding: 0.5rem 1rem;
@@ -159,6 +186,7 @@ nav {
   color: #000;
 }
 
+/* Hover behaviour to keep dropdown open */
 .nav-links .dropdown:hover .dropdown-menu,
 .nav-links .dropdown-menu:hover {
   display: block;
@@ -175,7 +203,7 @@ nav {
   display: block;
 }
 
-/* Sidebar menu */
+/* ----------- Sidebar menu ----------- */
 .container {
   display: grid;
   grid-template-columns: 1fr 3fr;  /* 1/4 and 3/4 */
@@ -186,6 +214,7 @@ nav {
   box-sizing: border-box;
 }
 
+/* Sticky sidebar styling */
 .sidebar {
   position: sticky;
   top: calc(60px + 3rem);
@@ -201,6 +230,7 @@ nav {
   padding: 20px;
 }
 
+/* Sidebar list styling */
 .sidebar ul {
   list-style: none;
   padding: 0;
@@ -210,6 +240,7 @@ nav {
   list-style: none;
 }
 
+/* Sidebar links styling */
 .sidebar a {
   text-decoration: none;
   color: #333;
@@ -218,7 +249,7 @@ nav {
   transition: all 0.3s;
 }
 
-/* The Highlight Class */
+/* Highlight active sidebar link */
 .sidebar a.active {
   background-color: #007bff;
   color: white;
@@ -226,6 +257,7 @@ nav {
   font-weight: bold;
 }
 
+/* Page sections for scroll naviguation */
 .page-section {
   min-height: auto; /* Ensures sections are long enough */
   border-bottom: 2px solid #2c73ff;
@@ -240,7 +272,7 @@ nav {
   }
 }
 
-/* Footer Styling */
+/* ----------- Footer ----------- */
 footer {
   width: 100vw;
   position: relative;
@@ -256,6 +288,7 @@ footer {
   box-sizing: border-box;
 }
 
+/* Footer layout - flexbox for horizontal sections and spacing */
 .footer-content {
   display: flex;
   justify-content: flex-start;
@@ -266,6 +299,7 @@ footer {
   align-items: flex-start;
 }
 
+/* Right align second footer column */
 .footer-content .footer-section:nth-child(2) {
   margin-left: auto;
   text-align: right;
@@ -276,6 +310,7 @@ footer {
   min-width: 200px;
 }
 
+/* Footer heading styling */
 .footer-section h1 {
   font-size: 2.5rem;
   color: white;
@@ -290,12 +325,14 @@ footer {
   margin-bottom: 1rem;
 }
 
+/* Footer text styling */
 .footer-section p {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
 
+/* Footer link list styling */
 .footer-section ul {
   list-style: none;
 }
@@ -315,7 +352,7 @@ footer {
   color: white;
   border-bottom: white solid 2px;
 }
-
+ /* Footer copyright and bottom text styling */
 .footer-bottom {
   text-align: center;
   margin-top: 2rem;
@@ -327,80 +364,7 @@ footer {
   font-size: 0.9rem;
   color: #e2f0fd;
 }
-
-/* Main Content Styling */
-
-/*Additional spacing and layout adjustments so that footer reaches bottom of page no matter what*/
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
-
-/*styling main content area with max-width and padding for readability */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  min-height: calc(100vh - 400px);
-}
-
-/* Ensures content doesn't touch edges on small screens */
-@media (max-width: 768px) {
-  main {
-    padding: 1.5rem 1rem;
-  }
-}
-
-/* Top of Page Button */
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99;
-  padding: 12px 20px;
-  background-color: #0080ff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-#myBtn:hover {
-  background-color: #0080ff;
-}
-
-/* Section Button (same styling as #myBtn but inline) */
-.section-button {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-}
-
-.section-button:hover {
-  background-color: #2980b9;
-}
-
-/* Responsive Footer */
+/* Footer responsive adjustments - stack sections and center text on mobile */
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -416,9 +380,12 @@ main {
   }
 }
 
-/* Body and HTML Setup */
-html {
-  scroll-behavior: smooth;
+/* ----------- Page structure ----------- */
+
+/*Additional spacing and layout adjustments so that footer reaches bottom of page no matter what*/
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
 body {
@@ -427,10 +394,100 @@ body {
   color: #333;
   background-color: #f4f4f4;
   min-height: 100vh;
-  display: flex;
+  display: block;
   flex-direction: column;
 }
 
+/* Main content area grows to fill space between header and footer */
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 400px);
+}
+
+/* Ensures content doesn't touch edges on small screens */
+@media (max-width: 768px) {
+  main {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ----------- Buttons ----------- */
+
+/* Style the download PDF button */
+    #pdfBtn {
+    border: none;
+    outline: none;
+    background-color: #0080ff;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    }
+    #pdfBtn:hover {
+    background-color: #85a5e8;
+    }
+
+/* Style the top of page button */
+    #myBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #0080ff;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    }
+
+    #myBtn img {
+    display: inline-block;
+    padding-right: 5px;
+    margin: 0;
+    vertical-align: middle;
+    }
+
+    #myBtn:hover {
+    background-color: #85a5e8;
+    }
+
+    html {
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    }
+
+/* Section Button (same styling as #myBtn but inline) */
+/* .section-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.section-button:hover {
+  background-color: #2980b9;
+} */
+
+/* ----------- Smooth Scrolling ----------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ----------- Main Content Styling ----------- */
 /* Make main content grow to push footer down */
 main {
   flex: 1;
@@ -440,8 +497,8 @@ main {
   width: 100%;
 }
 
-/* Gallery Section */
-.gallery {
+/* ----------- Gallery Styling ----------- */
+/* .gallery {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
@@ -451,18 +508,18 @@ main {
   font-size: 2.5rem;
   margin-bottom: 3rem;
   color: #2c3e50;
-}
+} */
 
-/* CSS Grid Layout - 2 Column Grid */
+/* CSS Grid Layout - 2 Column Grid
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
-}
+} */
 
-/* Gallery Item Styling */
+/* Gallery Item Styling
 .gallery-item {
   position: relative;
   overflow: hidden;
@@ -488,9 +545,9 @@ main {
   text-decoration: none;
   color: inherit;
   display: block;
-}
+} */
 
-/* Responsive Gallery */
+/* Responsive Gallery
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: 1fr;
@@ -510,10 +567,10 @@ main {
   .gallery-grid {
     gap: 1.5rem;
   }
-}
+} */
 
-/* Hero Section */
-.hero {
+/* ----------- Hero Section Styling ----------- */
+/* .hero {
   text-align: center;
   padding: 4rem 2rem;
   background: linear-gradient(135deg, #434c73 0%, #3b13cb 100%);
@@ -533,9 +590,9 @@ main {
   max-width: 600px;
   margin: 0 auto;
   color: #ecf0f1;
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
   }
@@ -547,9 +604,9 @@ main {
   .hero {
     padding: 3rem 1.5rem;
   }
-}
+} */
 
-/* Lab Page Styling */
+/* ----------- Individual Page Header Styling ----------- */
 .page-header {
   text-align: left;
   padding: clamp(6rem, 12vw, 18rem) clamp(1rem, 5vw, 10rem) 4rem;
@@ -581,36 +638,37 @@ main {
   font-style: italic;
 }
 
-.lab-content {
+/* ----------- Lab Content Styling ----------- */
+/* .lab-content {
   max-width: 800px;
   margin: 0 auto 4rem;
-}
+} */
 
-.learning-section {
+/* .learning-section {
   background-color: white;
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
+} */
 
-.learning-section h3 {
+/* .learning-section h3 {
   color: #667eea;
   margin-bottom: 1rem;
   font-size: 1.5rem;
-}
+} */
 
-.learning-section ul {
+/* .learning-section ul {
   margin-left: 2rem;
   line-height: 1.8;
-}
+} */
 
-.learning-section li {
+/* .learning-section li {
   margin-bottom: 0.5rem;
-}
+} */
 
-/* Screenshot Gallery */
-.lab-images {
+/* ----------- Lab Image Gallery ----------- */
+/* .lab-images {
   margin-bottom: 4rem;
 }
 
@@ -656,9 +714,9 @@ main {
   font-style: italic;
   color: #555;
   background-color: #f8f9fa;
-}
+} */
 
-/* References Section */
+/* ----------- References Sections Styling ----------- */
 .references {
   max-width: 1500px;
   margin: 2rem auto;
@@ -683,62 +741,22 @@ main {
   margin-bottom: 0;
 }
 
+/* ----------- Spaced List Styling ----------- */
 .spaced-list li {
   list-style: none;
   margin-bottom: 10px; /* Adjust the value for more or less space */
 }
 
-/* Scale all images*/
+/* ----------- Global Image Scaling ----------- */
+/* ensure all images scale responsivly and never overflow their container */
 img {
   max-width: 100%;
   height: auto;
   display: block;
-}
-
-/* Scale all images*/
-img {
-  display: block;
   margin: 0 auto;
 }
 
-/* Style the download PDF button */
-    #pdfBtn {
-    border: none;
-    outline: none;
-    background-color: #0080ff;
-    color: white;
-    cursor: pointer;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 16px;
-    }
-    #pdfBtn:hover {
-    background-color: #85a5e8;
-    }
-
-/* Style the top of page button */
-    #myBtn {
-    display: none; /* Hidden by default */
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #0080ff;
-    color: white;
-    cursor: pointer;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 16px;
-    }
-    #myBtn:hover {
-    background-color: #85a5e8;
-    }
-    html {
-    scroll-behavior: smooth; /* Enables smooth scrolling */
-    }
-
+/* ----------- Lightbox Modal Styling ----------- */
 /* Images zoom in when clicked and have a blurred background - Lightbox Modal Styling */
 .lightbox-modal {
   display: none;
@@ -756,11 +774,12 @@ img {
   transition: opacity 0.3s ease;
 }
 
+/* when active, modal becomes active and visible */
 .lightbox-modal.active {
   display: flex;
   opacity: 1;
 }
-
+ /*container for zoomed image and close button, allows for animation and styling*/
 .lightbox-content {
   position: relative;
   max-width: 90vw;
@@ -768,6 +787,7 @@ img {
   animation: zoomIn 0.3s ease;
 }
 
+/* Zoom in for modal images */
 @keyframes zoomIn {
   from {
     transform: scale(0.8);
@@ -779,6 +799,7 @@ img {
   }
 }
 
+/* zoom in image styling */
 .lightbox-img {
   width: 100%;
   height: 100%;
@@ -787,6 +808,7 @@ img {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* Close button styling */
 .lightbox-close {
   position: absolute;
   top: -40px;
@@ -803,160 +825,139 @@ img {
   color: #3498db;
 }
 
+/* makes gallry images clickable for zooming */
 .screenshot-grid img {
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-
+ /* slight zoom on hover to indicate interactivity */
 .screenshot-grid img:hover {
   transform: scale(1.02);
 }
 
- /* Scrolly - layout = Basic reset */
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+/* Hide the checkbox */
+.menu-toggle {
+  display: none;
 }
 
-
-body {
-font-family: Arial, sans-serif;
+/* ----------- Hamburger menu for mobile ----------- */
+/* Hide checkbox */
+.menu-toggle {
+  display: none;
 }
 
-
-/* Main 2-column layout */
-.scrolly-container {
-display: flex;
-min-height: 100vh;
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 1100;
 }
 
-/* Left side (visual stage) */
-.visual-column {
-position: fixed;
-left: 0;
-top: 0;
-width: 50%;
-height: 100vh;
-background: white;
-padding: 24px;
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s ease;
 }
 
-/* Right side (story) */
-.text-column {
-margin-left: 50%;
-width: 50%;
-padding: 25px;
-background: #f3f3f3;
+/* GLASS OVERLAY */
+.glass-overlay {
+  display: none;
 }
 
-/* Stacked images */
-.visual-stack {
-position: relative;
-width: 100%;
-height: 100%;
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Glass blur background */
+  .glass-overlay {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 900;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  /* FULL-WIDTH DROPDOWN MENU */
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: -350px; /* start hidden above screen */
+    left: 0;
+    width: 100vw; /* full width */
+    flex-direction: column;
+    background: #0080ff; /* header blue */
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    z-index: 1000;
+
+    /* Smooth slide + fade */
+    opacity: 0;
+    transition:
+      top 0.45s cubic-bezier(0.25, 0.8, 0.25, 1),
+      opacity 0.45s ease;
+  }
+
+  /* White text */
+ /* Base link styling + animation start state */
+.nav-links a {
+  font-size: 1.25rem;
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+
+  opacity: 0; /* start invisible */
+  transform: translateY(10px); /* slide up */
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    border-color 0.3s ease;
+  }
+
+  /* White underline hover */
+  .nav-links a:hover {
+    border-bottom: 2px solid white;
+  }
+
+  /* When menu is toggled ON */
+  .menu-toggle:checked ~ .glass-overlay {
+    display: block;
+    opacity: 1;
+  }
+
+  .menu-toggle:checked ~ .nav-links {
+    display: flex;
+    top: 70px; /* drops smoothly from hamburger */
+    opacity: 1;
+  }
+
+  .menu-toggle:checked ~ .nav-links a {
+  opacity: 1;
+  transform: translateY(0);
+  }
+
+  /* Animate hamburger into X */
+  .menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
 }
-
-/* Each visual sits on top of each other */
-.visual {
-position: absolute;
-inset: 0;
-opacity: 0;
-transition: opacity 0.7s ease;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-/* The active one shows */
-.visual.active {
-opacity: 1;
-}
-
-.visual img {
-max-width: 90%;
-max-height: 90%;
-object-fit: contain;
-}
-
-/* story steps spacing */
-.story-step {
-min-height: 90vh;
-padding: 200px 0;
-}
-
-.story-step h2 {
-font-size: 32px;
-margin-bottom: 16px;
-}
-
-.story-step p {
-font-size: 18px;
-margin-bottom: 12px;
-}
-
-.spacer {
-height: 10vh;
-}
-
-/* Makes image container a positioning reference */
-.image-stage {
-position: relative;
-display: inline-block;
-}
-
-/* Ensure main image behaves predictably */
-.main-image {
-display: block;
-max-width: 90%;
-max-height: 90%;
-object-fit: contain;
-}
-
-/* Hotspot container sits on top of image */
-.hotspot {
-position: absolute;
-
- /* MOVE THESE VALUES TO POSITION HOTSPOT */
-left: 50%;
-top: 50%;
-
-transform: translate(-50%, -50%);
-cursor: pointer;
-z-index: 5;
-}
-
-/* Size of hotspot icon */
-.hotspot-icon {
-width: 36px;
-height: 36px;
-display: block;
-}
-
-/* Label styling */
-.hotspot-label {
-position: absolute;
- left: 120%; /* places it to the right of icon */
-top: 50%;
-transform: translateY(-50%);
-
-width: 220px;
-padding: 10px 12px;
-
-background: rgba(255, 255, 255, 0.95);
-border-radius: 12px;
-box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-
-font-size: 14px;
-line-height: 1.4;
-
-opacity: 0;
- pointer-events: none; /* prevents flicker */
-transition: opacity 0.25s ease;
-}
-
-/* THE MAGIC: reveal on hover */
-.hotspot:hover .hotspot-label {
-opacity: 1;
-}
-
