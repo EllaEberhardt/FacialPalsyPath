@@ -272,6 +272,47 @@ nav {
   }
 }
 
+/* ----------- Understanding Paralysis page ----------- */
+
+/*Highlighting text*/
+.highlight {
+  font-weight: bold;
+}
+
+.care-point {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 14px;
+  background-color: #f5dee1;
+  border: 4px solid #e97993;
+  border-radius: 30px;
+  padding: 15px;
+}
+
+#care-point-text h3 {
+  color: #e97993;
+}
+
+#causes-list {
+  list-style-position: outside;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+#stages-list {
+  list-style-position: outside;
+  margin-top: 10px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+#synkinesis-treatment-list {
+  list-style-position: outside;
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
 /* ----------- Footer ----------- */
 footer {
   width: 100vw;
@@ -717,6 +758,7 @@ main {
 } */
 
 /* ----------- References Sections Styling ----------- */
+
 .references {
   max-width: 1500px;
   margin: 2rem auto;
