@@ -205,6 +205,7 @@ nav {
 
 /* ----------- Sidebar menu ----------- */
 .container {
+  overflow: visible;
   display: grid;
   grid-template-columns: 1fr 3fr;  /* 1/4 and 3/4 */
   gap: 20px;
@@ -243,7 +244,7 @@ nav {
 /* Sidebar links styling */
 .sidebar a {
   text-decoration: none;
-  color: #333;
+  color: #000000;
   display: block;
   padding: 10px;
   transition: all 0.3s;
@@ -270,6 +271,62 @@ nav {
   .container {
     grid-template-columns: 1fr;
   }
+}
+
+/* Button invisble except on mobile */
+.sidebar-toggle {display: none;}
+
+/* Swap to toggle on mobile*/
+@media (max-width: 768px) {
+    .sidebar-toggle {
+        display: block; /* Show button on mobile */
+        width: 100%;
+
+        position: sticky;
+        top: 110px;
+        width: 100%;
+        border-radius: 20px;
+        
+        background: #007bff;
+        color: white;
+        text-align: left;
+        padding: 10px;
+        font: inherit;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+
+        transition: all 0.3s;
+    }
+
+    .sidebar-toggle::after{
+    content: "▼";
+    padding-right: 8px;
+    float: right;
+    }
+
+    .sidebar {
+        display: none; /* Hide sidebar by default */
+        width: 100%;
+        position: sticky;
+        top: calc(60px + 3rem);
+        height: fit-content;
+         margin-top: 2rem;
+        left: 0;
+        background: #fff;
+        border-radius: 20px;
+        z-index: 100;
+        overflow-y: auto;
+    }
+
+    .page-section {
+      scroll-margin-top: calc(100px + 2rem);
+    }
+
+    /* Class added by JavaScript to show the menu */
+    .sidebar.open {
+        display: block;
+    }
 }
 
 /* ----------- Understanding Paralysis page ----------- */

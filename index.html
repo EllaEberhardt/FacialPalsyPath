@@ -7,7 +7,7 @@
     <title>Understanding Facial Paralysis</title>
     <link rel="icon" type="image/x-icon" href="icons/FacialPalsyPathLogo.png">
     <link rel="stylesheet" href="style.css">
-    <script defer src="js/include.js"></script>
+    <script defer src="main.js"></script>
 </head>
 <body>
 <div data-include="components/header.html"></div>
@@ -19,7 +19,8 @@
 </section>
 
 <div class="container">
-  <aside class="sidebar">
+<button class="sidebar-toggle" id="sidebarToggle">Toggle</button>
+<aside class="sidebar" id="sidebar">
     <!-- Left column content (1/4 width) -->
         <li><a href="#whatisparalysis" class="active">What is Paralysis?</a></li>
         <li><a href="#causes">Causes</a></li>
@@ -27,7 +28,7 @@
         <li><a href="#stages">Stages</a></li>
         <li><a href="#synkinesis">Synkinesis</a></li>
         <li><a href="#recovery">Recovery & Impacts</a></li>
-  </aside>
+</aside>
   <main class="content">
     <!-- Right column content (3/4 width) -->
      <div id="whatisparalysis" class="page-section">
