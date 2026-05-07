@@ -95,7 +95,7 @@ const observer = new IntersectionObserver((entries) => {
       if (activeLink) {
         activeLink.classList.add('active');
 
-        // ✅ Update button text to match active section
+        // Update button text to match active section
         sidebarButton.textContent = activeLink.textContent;
       }
     }
@@ -114,3 +114,37 @@ if (firstActive) {
 }
 
 sidebarButton.textContent = activeLink.textContent + ' ▼';
+
+
+////////////////Tab functionality for solution page ////////////
+
+async function loadIncludes() {
+  const targets = document.querySelectorAll("[data-include]");
+
+  for (const el of targets) {
+    const filePath = el.getAttribute("data-include");
+    const response = await fetch(filePath);
+    const html = await response.text();
+    el.innerHTML = html;
+  }
+
+  // ✅ Init tabs AFTER includes are loaded
+  initTabs();
+}
+
+function initTabs() {
+  const buttons = document.querySelectorAll('.tab-button');
+  const contents = document.querySelectorAll('.tab-content');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      contents.forEach(content => content.classList.remove('active'));
+
+      button.classList.add('active');
+
+      const targetID = button.getAttribute('data-target');
+      document.getElementById(targetID).classList.add('active');
+    });
+  });
+}
