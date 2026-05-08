@@ -556,7 +556,7 @@ main {
     color: #0080ff;
     pointer-events: none; /* Makes the button "invisible" to the mouse */
     cursor: default;
-    background-color: #c9d7ff; 
+    background-color: #c9d7ff;
     border-radius: 15px;
   }
 
@@ -880,12 +880,22 @@ main {
 /* ----------- References Sections Styling ----------- */
 
 .references {
-  max-width: 1500px;
+  flex: 1;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 2rem;
   background-color: #ecf0f1;
   border-radius: 8px;
   border-left: 4px solid #3498db;
+  min-height: calc(100vh - 400px);
+  overflow-wrap: break-word;
+}
+
+/* Ensures content doesn't touch edges on small screens */
+@media (max-width: 768px) {
+  .references {
+    padding: 1.5rem 1rem;
+  }
 }
 
 .references h2 {
