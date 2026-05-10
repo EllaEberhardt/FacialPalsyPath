@@ -22,17 +22,9 @@ h1 {
   font-weight: 600;
   font-style: normal;
 }
-
-/* ----------- Page Text Styling ----------- */
 h2 {
-  color: #007bff;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-h3 {
   color: #49a4ff;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 /* ----------- Global Styles ----------- */
@@ -258,15 +250,6 @@ nav {
   transition: all 0.3s;
 }
 
-.sidebar a:hover {
-  text-decoration: none;
-  background-color: #69b1ff;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  transition: all 0.3s;
-}
-
 /* Highlight active sidebar link */
 .sidebar a.active {
   background-color: #007bff;
@@ -348,10 +331,11 @@ nav {
 
 /* ----------- Understanding Paralysis page ----------- */
 
-/*Highlighting text*/
+/*Highlighting text in bold*/
 .highlight {
   font-weight: bold;
 }
+
 /* Hover text definitions*/
 .definition {
   text-decoration: underline;
@@ -369,14 +353,14 @@ nav {
   position: fixed;
   left: var(--tx, 0px);
   top: var(--ty, 0px);       /* follows cursor via JS */
-  background: #c0ddfa;
+  background: rgba(220, 235, 255, 0.75);
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 10px;
   padding: 8px 12px;
   font-size: 0.85rem;
-  color: #2382e1;
+  color: #002a6e;
   box-shadow: 0 4px 16px rgba(0, 60, 160, 0.15);
   max-width: 220px;
   white-space: normal;
@@ -406,30 +390,6 @@ nav {
 #care-point-text h3 {
   color: #e97993;
 }
-
-/*Tutorial styling*/
-
-.tutorial {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  background-color: #e8edfc;
-  border: 4px solid #c9d7ff;
-  border-radius: 30px;
-  padding: 20px;
-  margin-top: 1rem; 
-}
-
-#tutorial-text {
-  flex: 1;
-  gap: 10px;
-}
-
-#tutorial-text h3 {
-  color: #49a4ff;
-}
-
-/* List Styling */
 
 #causes-list {
   list-style-position: outside;
@@ -463,6 +423,7 @@ footer {
   background-color: #49a4ff;
   color: #ecf0f1;
   padding: 3rem 2rem 1rem;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 }
 
@@ -497,6 +458,7 @@ footer {
 }
 
 .footer-section h3 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.5rem;
   color: white;
   margin-bottom: 1rem;
@@ -504,6 +466,7 @@ footer {
 
 /* Footer text styling */
 .footer-section p {
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
@@ -544,19 +507,13 @@ footer {
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
+  
   .footer-section {
-    text-align: center;
     margin-bottom: 2rem;
-    margin-left: 0;
-    width: 100%;
   }
-  .footer-content .footer-section:nth-child(2) {
-    margin-left: 0;
-    text-align: center;
-  }
+  
   footer {
     padding: 2rem 1rem 1rem;
   }
@@ -607,14 +564,6 @@ main {
 }
 
 /* ----------- Tab Section ----------- */
-.tab-section {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: #e8edfc;
-    border: 4px solid #c9d7ff;
-    border-radius: 30px;
-    padding: 15px;
-}
 
 .tabs-container {
     display: flex;
@@ -634,7 +583,6 @@ main {
     padding: 12px;
     border-radius: 15px;
     font-size: 16px;
-    margin: 3px;
   }
 
 .tab-button.active {
@@ -660,98 +608,130 @@ main {
     display: block;
 }
 
-/* ── Frosted-glass toggle button ─────────────────────────────────────────── 
+/* ── Side panel: anchored to .tab-content-container ────────────────────── */
+
+.tab-section {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: #e8edfc;
+    border: 4px solid #c9d7ff;
+    border-radius: 30px;
+    padding: 15px;
+    position: relative;
+    /* overflow: hidden removed — clipping now handled by tab-content-container */
+}
+
+/* Positioning context for the side panel overlay */
+.tab-content-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 18px 18px; /* match lower corners of tab-section */
+}
+
+/* Wrapper: fills the right half of the content area only (not the buttons row) */
+.side-panel-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  display: flex;
+  align-items: stretch;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Toggle button — always visible at the left edge of the wrapper */
 .side-panel-toggle {
-  align-self: center;
+  pointer-events: all;
   flex-shrink: 0;
-  width: 40px;
-  height: 56px;
+  width: 36px;
+  align-self: center;
+  height: 50px;
   display: grid;
   place-items: center;
-
-  /* Frosted glass 
-  background: rgba(200, 220, 255, 0.35);
+  background: rgba(200, 220, 255, 0.5);
   backdrop-filter: blur(10px) saturate(160%);
   -webkit-backdrop-filter: blur(10px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 0 10px 10px 0;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 12px 0 0 12px;
 
   color: #003d7a;
   outline: none;
   cursor: pointer;
-  box-shadow: 2px 0 12px rgba(0, 80, 200, 0.12);
-  transition: background 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: -2px 0 10px rgba(0, 80, 200, 0.15);
+  transition: background 0.25s ease;
 }
 
 .side-panel-toggle:hover {
-  background: rgba(200, 220, 255, 0.55);
-  box-shadow: 2px 0 18px rgba(0, 80, 200, 0.22);
+  background: rgba(200, 220, 255, 0.75);
 }
 
 .sp-icon-close {
   display: none !important;
 }
 
- ── Frosted-glass side panel ────────────────────────────────────────────── 
+/* Panel: collapsed by default — zero width, invisible */
 .side-panel {
-  display: none;
-  flex-shrink: 0;
+  flex: 1;
   width: 0;
   overflow: hidden;
-}
+  opacity: 0;
+  pointer-events: none;
 
-.side-panel-open .side-panel {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 220px;
-  padding: 20px 16px;
+  padding: 0;
 
-  /* Frosted glass 
-  background: rgba(220, 235, 255, 0.35);
-  backdrop-filter: blur(14px) saturate(180%);
-  -webkit-backdrop-filter: blur(14px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: 0 16px 16px 0;
+  background: rgba(220, 235, 255, 0.55);
+  backdrop-filter: blur(18px) saturate(200%);
+  -webkit-backdrop-filter: blur(18px) saturate(200%);
+  border-left: 1px solid rgba(255, 255, 255, 0.65);
+  /* Right edge is flush with tab-section's border-radius — no extra radius needed */
+  border-radius: 16px 26px 26px 16px;
 
   color: #003060;
-  box-shadow: 4px 0 24px rgba(0, 60, 160, 0.15);
-  animation: panelSlideIn 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+  box-shadow: -6px 0 28px rgba(0, 60, 160, 0.18);
+
+  transition: width 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              opacity 0.3s ease,
+              padding 0.35s ease;
 }
 
-@keyframes panelSlideIn {
-  from { opacity: 0; transform: translateX(-12px); }
-  to   { opacity: 1; transform: translateX(0); }
+/* Open state on .tab-section */
+.tab-section.side-panel-open .side-panel {
+  width: 100%;      /* fills the flex-1 space = full wrapper minus toggle btn */
+  opacity: 1;
+  pointer-events: all;
+  padding: 24px 20px;
+}
+
+.tab-section.side-panel-open .side-panel-wrapper {
+  pointer-events: all;
+}
+
+.tab-section.side-panel-open .sp-icon-open  { display: none !important; }
+.tab-section.side-panel-open .sp-icon-close { display: initial !important; }
+
+/* Keep toggle border-radius consistent when open (panel is to the right) */
+.tab-section.side-panel-open .side-panel-toggle {
+  border-radius: 12px 0 0 12px;
+  box-shadow: none;
 }
 
 .side-panel h3 {
   font-size: 1rem;
   font-weight: 700;
   color: #002a6e;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.75rem;
 }
 
 .side-panel p {
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.55;
   color: #1a3a5c;
 }
-
-/* Swap icons 
-.side-panel-open .sp-icon-open {
-  display: none !important;
-}
-
-.side-panel-open .sp-icon-close {
-  display: initial !important;
-}
-
-/* Flip toggle border-radius when panel is open 
-.side-panel-open .side-panel-toggle {
-  border-radius: 10px 0 0 10px;
-  box-shadow: -2px 0 12px rgba(0, 80, 200, 0.12);
-}
-------------------------------------*/
 
 
 /* ----------- Buttons ----------- */
@@ -770,21 +750,6 @@ main {
     #pdfBtn:hover {
     background-color: #85a5e8;
     }
-
-  .button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 0.5rem;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius:40px;
-    font-family: sans-serif;
-  }
-
-  .button:hover {
-    background-color: #85a5e8;
-  }
 
 /* Style the top of page button */
     #myBtn {
@@ -1073,80 +1038,37 @@ main {
 
 /* ----------- References Sections Styling ----------- */
 
-.references-dropdown {
-  margin-top: 1rem;
-}
-
-.references-section {
-  margin-top: 1rem;
-}
-
-.references-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0;
-  color: inherit;
-}
-
-.references-toggle:hover {
-  opacity: 0.7;
-}
-
-.triangle {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  border-radius: 0 0 2px 0;
-  transform: rotate(45deg);
-  transition: transform 0.3s ease;
-}
-
-.triangle.open {
-  transform: rotate(225deg);
-}
-
-.references-content {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease;
-}
-
-.references-content.open {
-  max-height: 500px; /* Large enough to show content */
-  padding: 1rem 0;
+.references {
+  flex: 1;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+  min-height: calc(100vh - 400px);
   overflow-wrap: break-word;
-}
-
-.references-content ul li {
-  margin-bottom: 6px; /* adjust to taste */
 }
 
 /* Ensures content doesn't touch edges on small screens */
 @media (max-width: 768px) {
-  .references.content {
+  .references {
     padding: 1.5rem 1rem;
   }
 }
 
-.references.section h2 {
+.references h2 {
   color: #2c3e50;
   margin-bottom: 1rem;
 }
 
-.references.section p {
+.references p {
   line-height: 1.8;
   margin-bottom: 1rem;
   color: #555;
 }
 
-.references.section p:last-child {
+.references p:last-child {
   margin-bottom: 0;
 }
 

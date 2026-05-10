@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // Update mobile sidebar toggle button text
           const sidebarButton = document.getElementById('sidebarToggle');
           if (sidebarButton) {
-            sidebarButton.textContent = activeLink.textContent;
+            sidebarButton.textContent = activeLink.textContent + ' ▼';
           }
         }
       }
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set initial button text from the first active sidebar link
     const firstActive = document.querySelector('.sidebar a.active');
     if (firstActive) {
-      sidebarButton.textContent = firstActive.textContent;
+      sidebarButton.textContent = firstActive.textContent + ' ▼';
     }
 
     sidebarButton.addEventListener('click', () => {
@@ -106,31 +106,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Side panel toggles / DONT DELETE - changing this makes the header disapear??? ────────────────────────────────────────────────────
-  document.querySelectorAll('.side-panel-toggle').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const tabSection = btn.closest('.tab-section');
-      const isOpen = tabSection.classList.toggle('side-panel-open');
-      btn.setAttribute('aria-expanded', isOpen);
-    });
-  });
-
 });
-
-// ─── Definition Styling - make it follow cursor ─────────────────────────────────
-document.querySelectorAll('.definition').forEach(el => {
-  el.addEventListener('mousemove', (e) => {
-    const tip = el;
-    // CSS custom properties let the ::after pseudo-element read the cursor position
-    tip.style.setProperty('--tx', (e.clientX + 14) + 'px');
-    tip.style.setProperty('--ty', (e.clientY + 14) + 'px');
-  });
-});
-
-// ─── References Toggle ─────────────────────────────────
-function toggleReferences() {
-  const content = document.getElementById('referencesContent');
-  const triangle = document.querySelector('.triangle');
-  content.classList.toggle('open');
-  triangle.classList.toggle('open');
-}
