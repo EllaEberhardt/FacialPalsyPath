@@ -1119,7 +1119,7 @@ main {
 }
 
 .references-content.open {
-  max-height: 500px; /* Large enough to show content */
+  max-height: 800px; /* Large enough to show content */
   padding: 1rem 0;
   overflow-wrap: break-word;
 }
