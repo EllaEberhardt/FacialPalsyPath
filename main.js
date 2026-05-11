@@ -127,7 +127,7 @@ document.querySelectorAll('.definition').forEach(el => {
   });
 });
 
-// -------TEST CODE TO CLICK OFF THE DEFINITION TO CLOSE IT ON MOBILE
+// ------- it works - TEST CODE TO CLICK OFF THE DEFINITION TO CLOSE IT ON MOBILE
 
 document.addEventListener('click', function(e) {
   if (!e.target.classList.contains('definition')) {
@@ -135,6 +135,12 @@ document.addEventListener('click', function(e) {
       el.classList.remove('active');
     });
   }
+});
+
+window.addEventListener('scroll', function() {
+  document.querySelectorAll('.definition').forEach(el => {
+    el.classList.remove('active');
+  });
 });
 
 // ─── References Toggle ─────────────────────────────────
