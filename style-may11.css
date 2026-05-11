@@ -575,14 +575,6 @@ footer {
   }
   footer {
     padding: 2rem 1rem 1rem;
-    /* Override the desktop full-width trick with a simpler approach on mobile */
-    width: 100%;
-    position: static;
-    left: auto;
-    right: auto;
-    margin-left: 0;
-    margin-right: 0;
-    box-sizing: border-box;
   }
 }
 
@@ -600,9 +592,8 @@ body {
   color: #333;
   background-color: #f4f4f4;
   min-height: 100vh;
-  display: flex;
+  display: block;
   flex-direction: column;
-  overflow-x: hidden; /* prevents mobile horizontal scroll without clipping footer width */
 }
 
 /* Main content area grows to fill space between header and footer */
