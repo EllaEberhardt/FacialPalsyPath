@@ -127,6 +127,16 @@ document.querySelectorAll('.definition').forEach(el => {
   });
 });
 
+// -------TEST CODE TO CLICK OFF THE DEFINITION TO CLOSE IT ON MOBILE
+
+document.addEventListener('click', function(e) {
+  if (!e.target.classList.contains('definition')) {
+    document.querySelectorAll('.definition').forEach(el => {
+      el.classList.remove('active');
+    });
+  }
+});
+
 // ─── References Toggle ─────────────────────────────────
 function toggleReferences() {
   const content = document.getElementById('referencesContent');
