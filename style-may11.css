@@ -469,25 +469,17 @@ nav {
 
 /* ----------- Footer ----------- */
 footer {
-  width: 100%;
+  width: 100vw;
   position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   margin-top: 4rem;
-  background-color: transparent;
+  background-color: #49a4ff;
   color: #ecf0f1;
   padding: 3rem 2rem 1rem;
   box-sizing: border-box;
-}
-
-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 100%;
-  background-color: #49a4ff;
-  z-index: -1;
 }
 
 /* Footer layout - flexbox for horizontal sections and spacing */
@@ -586,7 +578,7 @@ footer::before {
   }
 }
 
-/* ----------- Main content Page structure ----------- */
+/* ----------- Page structure ----------- */
 
 /*Additional spacing and layout adjustments so that footer reaches bottom of page no matter what*/
 html, body {
@@ -624,15 +616,6 @@ main {
 @media (max-width: 768px) {
   main {
     padding: 1.5rem 1rem;
-  }
-  .content,
-  .page-section,
-  .container,
-  .references-dropdown,
-  .references-section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    box-sizing: border-box;
   }
   .media-text-grid {
     grid-template-columns: 1fr;
@@ -1000,8 +983,9 @@ main {
   padding: clamp(6rem, 12vw, 18rem) clamp(1rem, 5vw, 10rem) 4rem;
   background-color: #49a4ff;
   color: rgb(92, 162, 255);
+  border-radius: 0px;
   margin-bottom: 3rem;
-  width: 100%;
+  width: 100vw;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -1011,18 +995,6 @@ main {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-}
-
-.page-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 100%;
-  background-color: #49a4ff;
-  z-index: -1;
 }
 
 .page-header h1 {
