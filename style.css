@@ -639,6 +639,7 @@ body {
   min-height: 100vh;
   display: block;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 /* Main content area grows to fill space between header and footer */
@@ -1038,28 +1039,16 @@ main {
   background-color: #49a4ff;
   color: rgb(92, 162, 255);
   margin-bottom: 3rem;
-  width: 100%;
+  width: 100vw;
   position: relative;
   left: 50%;
-  transform: translateX(-50%);
-  margin-left: 0;
-  margin-right: 0;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-}
-
-.page-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 100%;
-  background-color: #49a4ff;
-  z-index: -1;
 }
 
 .page-header h1 {
