@@ -279,7 +279,7 @@ nav {
 .page-section {
   min-height: auto; /* Ensures sections are long enough */
   border-bottom: 2px solid #2c73ff;
-  padding: clamp(2rem, 5vw, 4rem) 0;
+  padding: 2rem 0;
   scroll-margin-top: calc(60px + 2rem);
 }
 
@@ -660,15 +660,15 @@ main {
 /* Ensures content doesn't touch edges on small screens */
 @media (max-width: 768px) {
   main {
-    padding: 1.5rem 1rem;
+    padding: 1rem 1rem;
   }
   .content,
   .page-section,
   .container,
   .references-dropdown,
   .references-section {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0rem;
+    padding-right: 0;
     box-sizing: border-box;
   }
   .media-text-grid {
