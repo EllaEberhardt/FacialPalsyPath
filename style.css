@@ -287,6 +287,7 @@ nav {
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
+    width: 100%;
     gap: 0px;
   }
 }
