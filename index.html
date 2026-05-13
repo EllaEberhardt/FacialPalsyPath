@@ -10,6 +10,7 @@
     <script src="main.js" defer></script>
 </head>
 <body>
+<div data-include="components/header.html"></div>
 
 <main>
 <section class="page-header">
@@ -28,11 +29,11 @@
         <li><a href="#synkinesis">Synkinesis</a></li>
         <li><a href="#recovery">Recovery & Impacts</a></li>
 </aside>
-  <div class="content">
+  <main class="content">
     <!-- Right column content (3/4 width) -->
      <div id="whatisparalysis" class="page-section">
         <h2>What is Paralysis?</h2>
-        <p>Paralysis is the inability to move the muscles you intend to. In the case of <span class="highlight">facial 
+        <p><span class = "definition" definition-text="Loss of movement" >Paralysis</span> is the inability to move the muscles you intend to. In the case of <span class="highlight">facial 
             paralysis </span> this means the muscles in your face won't move when you want them to. </p>
             
             <div class="tutorial">
@@ -268,6 +269,7 @@
                     <img src="icons/Botox.svg" alt="icon of Botox vial and syringe." style="width:50px;height:50px;">
                     <div id="icon-and-list-text"> 
                     <p><span class="highlight">Botox</span> can relax the muscle with too many signals to it.</p>
+                    <a href="EDIT ME" class="button">Learn more about Botox</a>
                     </div>
                 </div>
 
@@ -275,6 +277,7 @@
                     <img src="icons/PhysicalTherapy.svg" alt="icon for physical therapy." style="width:50px;height:50px;">
                     <div id="icon-and-list-text"> 
                     <p><span class="highlight">Physical therapy</span> can help you retrain your brain to move the muscles you are trying to.</p>
+                    <a href="EDIT ME" class="button">Learn more about physical therapy</a>
                     </div>
                 </div>
 
@@ -282,6 +285,7 @@
                     <img src="icons/Surgery.svg" alt="icon for surgery." style="width:50px;height:50px;">
                     <div id="icon-and-list-text"> 
                     <p><span class="highlight">Surgery</span> can be done to remove specific branches of the facial nerve causing problematic movement. </p>
+                    <a href="EDIT ME" class="button">Learn more about surgery</a>
                     </div>
                 </div>
         </div>
@@ -300,8 +304,14 @@
             is important to recognize that that may not be possible, but your care team will do what they can 
             to help you.</p>
         </div>
-  </div>
+  </main>
 </div>
+
+<!-- Insert print PDF button here -->
+<button onclick="openPDF()" id="pdfBtn" style="display: flex; align-items: center; gap: 6px;">
+    <img src="icons/PrinterIcon.svg" alt="icon of a printer." style="width:20px;height:20px;">
+    Download the full page as a PDF
+</button>
 
 <!-- References section -->
 <div class="references-section">
@@ -333,6 +343,7 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top">
     <img src="icons/TopOfPageArrow.png" alt="icon of an arrow pointing to the top of the page." style="width:20px;height:20px;">Top of Page</button>
 
+<div data-include="components/footer.html"></div>
 
 <script>
 let mybutton = document.getElementById("myBtn");
@@ -349,39 +360,6 @@ document.documentElement.scrollTop = 0;
 document.body.scrollTop = 0;
 }
 
-// Lightbox functionality
-const lightboxModal = document.getElementById('lightboxModal');
-const lightboxImg = document.getElementById('lightboxImg');
-const lightboxClose = document.getElementById('lightboxClose');
-const screenshotImages = document.querySelectorAll('.screenshot-grid img');
-
-screenshotImages.forEach(img => {
-    img.addEventListener('click', function() {
-        lightboxModal.classList.add('active');
-        lightboxImg.src = this.src;
-        lightboxImg.alt = this.alt;
-        document.body.style.overflow = 'hidden';
-    });
-});
-
-lightboxClose.addEventListener('click', function() {
-    lightboxModal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-});
-
-lightboxModal.addEventListener('click', function(e) {
-    if (e.target === lightboxModal) {
-        lightboxModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-});
-
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
-        lightboxModal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-});
 </script>
 </body>
 </html>
