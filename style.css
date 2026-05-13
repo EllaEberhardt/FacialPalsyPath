@@ -219,7 +219,7 @@ nav {
   gap: 20px;
   width: 100%;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -287,6 +287,7 @@ nav {
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
+    gap: 0px;
   }
 }
 
@@ -1037,13 +1038,13 @@ main {
   padding: clamp(6rem, 12vw, 18rem) clamp(1rem, 5vw, 10rem) 4rem;
   background-color: #49a4ff;
   color: rgb(92, 162, 255);
-  margin-bottom: 3rem;
   width: 100%;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
   margin-left: 0;
   margin-right: 0;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
