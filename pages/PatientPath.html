@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <base href="/FacialPalsyPath/"> -->
+    <title>Patient Path</title>
+    <link rel="icon" type="image/x-icon" href="../icons/FacialPalsyPathLogo.png">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../main.js" defer></script>
+</head>
+<body>
+<div data-include="../components/header.html"></div>
+
+<main>
+<section class="page-header">
+    <h1>Patient Path</h1>
+    <p class="header-description">Explore an overview of what to expect on your journey with facial paralysis.</p>
+</section>
+
+<div class="container">
+<button class="sidebar-toggle" id="sidebarToggle">Toggle</button>
+<aside class="sidebar" id="sidebar">
+    <!-- Left column content (1/4 width) -->
+        <li><a href="#firstsigns" class="active">First Signs</a></li>
+        <li><a href="#attheclinic">At the Clinic</a></li>
+        <li><a href="#athome">At Home</a></li>
+        <li><a href="#onsurgeryday">On Surgery Day</a></li>
+        <li><a href="#yourteam">Your Team</a></li>
+</aside>
+  <main class="content">
+    <!-- Right column content (3/4 width) -->
+     <div id="firstsigns" class="page-section">
+        <h2>First Signs</h2>
+        <p>Recognizing the early signs of facial paralysis is crucial for seeking timely medical attention and beginning appropriate treatment.</p>
+
+            <div class="tutorial">
+                <img src="icons/CursorClick.svg" alt="icon of clicking cursor." style="width:50px;height:50px;">
+                <div id="tutorial-text"> 
+                <h3>Tutorial</h3>
+                <p>Explore by clicking different tabs to learn more about facial paralysis.</p>
+                </div>
+            </div>
+
+            <section class="tab-section">
+            <div class="tabs-container">
+                    <button class="tab-button active" data-target="bilateral">
+                      Resting Face
+                     </button>
+                     <button class="tab-button" data-target="unilateral">
+                       Smiling 
+                     </button>
+                    </div>
+                     <div class="tab-content-container">
+                     <div id="bilateral" class="tab-content active">
+                       <img src="images/UnderstandingParalysisBilateral.png" style="width: 90%" alt="Image of woman with unilateral facial paralysis with her face in a resting state.">
+                    </div>
+                    <div id="unilateral" class="tab-content">
+                   <img src="images/UnderstandingParalysisUnilateral.png" style="width: 90%" alt="Image of woman with unilateral facial paralysis smiling. The paralyized side is not moving and her expression is pulled to the left.">
+                  </div>  
+                  </div>
+              </section>
+            <p>This can be <span class="highlight">unilateral</span> (on one side of your face) or <span class="highlight">bilateral</span> (on both sides). Paralysis 
+            can also be complete or partial and can be temporary or permanent.</p>
+            <br>
+        <div class="media-text-grid">
+            <img src="images/UnderstandingParalysisOveractiveMuscles.png" alt="Man with facial parlysis smiling. The overactive muscles on the healthy (left)side of the face are pulling his facial features to the left." style="width:100%;height:auto;">
+            <div><h3>What happens to the unparalyzed side of your face?</h3>
+            <p>When one side of your face is paralyzed, the other side can become overactive and pull your
+            facial features towards the side that is not paralyzed.</p>
+            <br></div>
+        </div>
+        <h3>What happens to your eye on the paralysed side?</h3>
+        <p>The <span class="highlight">eye</span> is an important thing to keep in mind with facial paralysis. 
+            You might find that it is harder to blink or close your eye on the side that is paralyzed. This is normal, as the facial nerve is responsible for helping close your eyelid. 
+            <br><br>A different nerve, the oculomotor nerve (cranial nerve III), is responsible for opening your eyelid. You will be able to open your eye even with facial paralysis. You can protect your eye by putting in eyedrops and taping it closed.</p>
+            <br><br>
+        <div class="media-text-grid">
+            <img src="images/UnderstandingParalysisEye1.png" alt="Woman with left sided facial paralysis taping her left eye shut for protection next to a bottle of eye lubricant." style="width:100%;height:auto;">
+            
+            <div>
+            <p>Protect your eye from:</p>
+            <div class="eye-icon-text-grid">
+                    <div class="eye-icon-text-item">
+                         <img src="icons/Dirt.svg" alt="icon of a wheelbarrow." style="width:50px;height:50px;">
+                         <p>Dirt</p>
+                    </div>
+                    <div class="eye-icon-text-item">
+                        <img src="icons/Wind.svg" alt="icon of wind blowing." style="width:50px;height:50px;">
+                        <p>Wind</p>
+                    </div>
+                     <div class="eye-icon-text-item">
+                        <img src="icons/Sun.svg" alt="icon of a sun." style="width:50px;height:50px;">
+                        <p>Dryness</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+        <br>
+        <div class="media-text-grid">
+            <div><h3>Why does my eye roll back when I try to close it?</h3>
+            <p><br>You might notice that when you feel like you're closing your eye, even 
+            though the eyelid doesn't move, your eye rolls back. <br><br>This is called <span class="highlight">Bell’s reflex</span> and 
+            something our body developed as extra protection.</p>
+            </div>
+            <section class="tab-section">
+            <div class="tabs-container">
+                    <button class="tab-button active" data-target="resting">
+                      Resting Face
+                     </button>
+                     <button class="tab-button" data-target="Bells">
+                       Bell's Reflex
+                     </button>
+                    </div>
+                     <div class="tab-content-container">
+                     <div id="resting" class="tab-content active">
+                       <img src="images/UnderstandingParalysisEye2.png" style="width: 100%" alt="Image of woman with left sided facial paralysis with her face in a neutral expression.">
+                    </div>
+                    <div id="Bells" class="tab-content">
+                   <img src="images/UnderstandingParalysisEye3.png" style="width: 100%" alt="Image of woman with left sided facial paralysis trying to close her eye. The paralyzed eye rolls back and does not close, also known as Bell's reflex.">
+                  </div>  
+                  </div>
+              </section>
+        </div>
+        </div>
+        <div id="facialnerve" class="page-section">
+        <h2>Facial Nerve</h2>
+        <p>There are many different causes for facial paralysis. It can be either <span class="highlight">congenital</span> (you are 
+            born with it) or <span class="highlight">acquired</span> (it happened after birth). If you weren’t born with it, there 
+            are two main reasons you are experiencing facial paralysis:
+           <ul id="causes-list">
+            <li>There is damage to the area of your brain that sends the signals to your face.</li>
+            <li>There is damage to your facial nerve and the signals aren’t going through.</li>
+            </ul>
+            Paralysis happens when there is damage to the nerve or brain due to:</p> 
+            <br>
+                <div class="icon-text-grid">
+                    <div class="icon-text-item">
+                         <img src="icons/Injury.svg" alt="icon of an injured person." style="width:50px;height:50px;">
+                         <p>Trauma</p>
+                    </div>
+                    <div class="icon-text-item">
+                        <img src="icons/CancerRibbon.svg" alt="icon of a cancer ribbon." style="width:50px;height:50px;">
+                        <p>Cancer</p>
+                    </div>
+                    <div class="icon-text-item">
+                        <img src="icons/Inflammation.svg" alt="icon of a flame." style="width:50px;height:50px;">
+                        <p>Inflammation</p>
+                    </div>
+                    <div class="icon-text-item">
+                        <img src="icons/Infection.svg" alt="icon of an infection." style="width:50px;height:50px;">
+                        <p>Infectious Conditions (Bell’s, Ramsay-Hunt, etc)</p>
+                    </div>
+                     <div class="icon-text-item">
+                         <img src="icons/Brain.svg" alt="icon of a brain." style="width:50px;height:50px;">
+                         <p>Stroke</p>
+                    </div>
+                    <div class="icon-text-item">
+                        <img src="icons/Ear.svg" alt="icon of an ear." style="width:50px;height:50px;">
+                        <p>Acoustic Neuroma</p>
+                    </div>
+                    <div class="icon-text-item">
+                        <img src="icons/Bug.svg" alt="icon of bug." style="width:50px;height:50px;">
+                        <p>Lyme Disease</p>
+                    </div>
+                    <div class="icon-text-item">
+                         <img src="icons/More.svg" alt="elipses" style="width:50px;height:50px;">
+                        <p>More</p>
+                    </div>
+                </div>
+
+            <br><p>Testing and examining your medical history can help the 
+            doctor understand why your facial paralysis symptoms are happening as well as help you 
+            figure out a path forward.</p>
+        </div>
+        <div id="facialmuscles" class="page-section">
+        <div class="media-text-grid">
+           <div><h2>Facial Muscles</h2>
+            <p>The facial muscles are responsible for the movements of the face, including smiling, frowning, and closing the eyes. These muscles are innervated by the facial nerve (cranial nerve VII).</p></div>
+            <img src="images/UnderstandingParalysisFacialMuscles.png" alt="Image of facial muscles." style="width:100%;height:auto;">
+        </div>
+        </div>
+        <div id="facialnerve" class="page-section">
+        <div class="media-text-grid">
+           <div><h2>Facial Nerve</h2>
+            <p>The facial nerve (cranial nerve VII) is responsible for controlling the muscles of facial expression and is also involved in taste sensation and salivation.</p></div>
+            <img src="images/UnderstandingParalysisFacialNerve.png" alt="Image of facial nerve." style="width:100%;height:auto;">
+        </div>
+        </div>
+        
+        <section class="care-point">
+            <img src="icons/CarePointIcon.png" alt="icon of two hands holding with a heart to the top left of them." style="width:50px;height:50px;">
+            <div id="care-point-text">    
+                <h3>Care Point</h3>
+                <p>Everyone has a unique journey with facial paralysis and it is important to understand that the stages outlined above are general guides but you might experience a different timeline.</p>
+             </div>
+            </section>
+  </main>
+</div>
+
+<!-- Insert print PDF button here -->
+<button onclick="openPDF()" id="pdfBtn" style="display: flex; align-items: center; gap: 6px;">
+    <img src="../icons/PrinterIcon.svg" alt="icon of a printer." style="width:20px;height:20px;">
+    Download the full page as a PDF
+</button>
+
+<!-- References section -->
+<div class="references-section">
+    <button class="references-toggle" onclick="toggleReferences()">
+        <span class="triangle"></span> References
+    </button>
+    <div class="references-content" id="referencesContent">
+        <ul>
+        <li>Cleveland Clinic medical. (2026, April 22). Facial paralysis: Causes, symptoms & treatment. Cleveland Clinic. Accessed May 2, 2026.</li>
+        <li>Hohman, M. H. (2024, October 6). Bell Palsy. StatPearls [Internet]. Accessed May 2, 2026.</li>
+        <li>Hohman, M. H. (2026, April 9). Facial nerve palsy. StatPearls [Internet]. Accessed May 2, 2026.</li>
+        <li>Mayo Foundation for Medical Education and Research. (2024, March 15). Bell’s Palsy. Mayo Clinic. Accessed May 2, 2026.</li>
+        <li>McHugh, C. I., Hartnick, C. J., Cohen, M. S., & Mokhtari, T. E. (2021, April 22). Unilateral facial paralysis. The Journal of pediatrics. Accessed May 2, 2026.</li>
+        <li>Ronthal, M., & Greenstein, P. (2025, July 14). Bell’s palsy: Pathogenesis, clinical features, and diagnosis in adults. UpToDate. Accessed May 2, 2026.</li>
+        <li>Rothman, M., & Greenstein, P. (2025, May 27). Bell’s palsy: Treatment and prognosis in adults. UpToDate. Accessed May 2, 2026.</li>
+        <li>Sanchez, A., Jaibir, P., & Jennifer, F. C. (2021, August 1). Facial paralysis: Timing of repair and management of the nonflaccidly paralyzed face. Current opinion in otolaryngology & head and neck surgery. Accessed May 2, 2026.</li>    
+        </ul>
+    </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-content">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    </div>
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+    <img src="../icons/TopOfPageArrow.png" alt="icon of an arrow pointing to the top of the page." style="width:20px;height:20px;">Top of Page</button>
+
+<div data-include="../components/footer.html"></div>
+
+<script>
+let mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    mybutton.style.display = "block";
+} else {
+    mybutton.style.display = "none";
+}
+}
+function topFunction() {
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+}
+
+</script>
+</body>
+</html>
