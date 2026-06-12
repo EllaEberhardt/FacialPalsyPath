@@ -660,7 +660,7 @@ main {
 }
 
 /* Ensures content doesn't touch edges on small screens */
-@media (max-width: 768px) {
+@media (max-width: 100vw) {
   main {
     padding: 1rem 1rem;
   }
