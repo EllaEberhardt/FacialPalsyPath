@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <base href="/FacialPalsyPath/"> -->
+    <title>Understanding Facial Paralysis</title>
+    <link rel="icon" type="image/x-icon" href="icons/FacialPalsyPathLogo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+<div data-include="../components/header.html"></div>
+
+<main>
+<section class="page-header">
+    <h1>Understanding Facial Paralysis</h1>
+    <p class="header-description">Explore an overview of facial paralysis and what it might mean for you.</p>
+</section>
+
+<div class="container">
+<button class="sidebar-toggle" id="sidebarToggle">Toggle</button>
+<aside class="sidebar" id="sidebar">
+    <!-- Left column content (1/4 width) -->
+        <li><a href="#whatisparalysis" class="active">What is Paralysis?</a></li>
+        <li><a href="#causes">Causes</a></li>
+        <li><a href="#bellspalsy">Bell's Palsy</a></li>
+        <li><a href="#stages">Stages</a></li>
+        <li><a href="#synkinesis">Synkinesis</a></li>
+        <li><a href="#recovery">Recovery & Impacts</a></li>
+</aside>
+  <main class="content">
+    <!-- Right column content (3/4 width) -->
+     <div id="whatisparalysis" class="page-section">
+        <h2>What is Paralysis?</h2>
+        <p>Paralysis is the inability to move the muscles you intend to. In the case of <span class="highlight">facial 
+            paralysis </span> this means the muscles in your face won't move when you want them to. </p>
+            
+            <div class="tutorial">
+                <img src="icons/CursorClick.svg" alt="icon of clicking cursor." style="width:50px;height:50px;">
+                <div id="tutorial-text"> 
+                <h3>Tutorial</h3>
+                <p>Explore by clicking different tabs to learn more about facial paralysis.</p>
+                </div>
+            </div>
+
+            <section class="tab-section">
+            <div class="tabs-container">
+                    <button class="tab-button active" data-target="bilateral">
+                      Resting Face
+                     </button>
+                     <button class="tab-button" data-target="unilateral">
+                       Smiling 
+                     </button>
+                    </div>
+                     <div class="tab-content-container">
+                     <div id="bilateral" class="tab-content active">
+                       <img src="images/UnderstandingParalysisBilateral.png" style="width:80%;height:auto;" alt="Image of a middle aged white woman with right-sided facial paralysis with her face in a resting state.">
+                    </div>
+                    <div id="unilateral" class="tab-content">
+                   <img src="images/UnderstandingParalysisUnilateral.png" style="width:80%;height:auto;" alt="Image of a middle aged white woman with right-sided facial paralysis smiling. The paralyized side is not moving and her expression is pulled to the left.">
+                  </div>  
+                  </div>
+              </section>
+            <p>This can be <span class="highlight">unilateral</span> (on one side of your face) or <span class="highlight">bilateral</span> (on both sides). Paralysis 
+            can also be complete or partial and temporary or permanent.</p>
+            <br>
+        <div class="media-text-grid">
+            <img src="images/UnderstandingParalysisOveractiveMuscles.png" alt="An image of an older Mexican man with right-sided facial paralysis smiling. The overactive muscles on the healthy (left) side of the face are pulling his facial features to the left." style="width:100%;height:auto;">
+            <div><h3>What happens to the unparalyzed side of your face?</h3>
+            <p>When one side of your face is paralyzed, the other side can become overactive and pull your
+            facial features towards the side that is not paralyzed.</p>
+            <br></div>
+        </div>
+        <h3>What happens to your eye on the paralysed side?</h3>
+        <p>The <span class="highlight">eye</span> is an important thing to keep in mind with facial paralysis. 
+            You might find that it is harder to blink or close your eye on the side that is paralyzed. This is normal, as the facial nerve is responsible for helping close your eyelid. 
+            A different nerve, the oculomotor nerve (cranial nerve III), is responsible for opening your eyelid. You will be able to open your eye even with facial paralysis. </p>
+            <br><br>
+        <div class="media-text-grid">
+            <img src="images/UnderstandingParalysisEye1.png" alt="An image of a middle aged indigenous man with right-sided facial paralysis taping his right eye shut for protection." style="width:100%;height:auto;">
+            
+            <div>
+            <p>You can protect your eye by putting in eyedrops and taping it closed. Make sure to protect your eye from:<br><br></p>
+            <div class="eye-icon-text-grid">
+                    <div class="eye-icon-text-item">
+                         <img src="icons/Dirt.png" alt="icon of a wheel barrow." style="width:70px;height:70px;">
+                         <p>Dirt</p>
+                    </div>
+                    <div class="eye-icon-text-item">
+                        <img src="icons/Wind.png" alt="icon of kite blowing in the wind." style="width:70px;height:70px;">
+                        <p>Wind</p>
+                    </div>
+                     <div class="eye-icon-text-item">
+                        <img src="icons/Sun.png" alt="icon of a sun." style="width:70px;height:70px;">
+                        <p>Dryness</p><br>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+        
+            <h3>Why does my eye roll back when I try to close it?</h3>
+            <p><br>You might notice that when you feel like you're closing your eye, even 
+            though the eyelid doesn't move, your eye rolls back. <br><br>This is called <span class="highlight">Bell’s reflex</span> and 
+            something our body developed as extra protection.</p>
+            <section class="tab-section">
+            <div class="tabs-container">
+                    <button class="tab-button active" data-target="resting">
+                      Resting Face
+                     </button>
+                     <button class="tab-button" data-target="Bells">
+                       Bell's Reflex
+                     </button>
+                    </div>
+                     <div class="tab-content-container">
+                     <div id="resting" class="tab-content active">
+                       <img src="images/UnderstandingParalysisEye2.png" style="width:80%;height:auto;" alt="Image of a middle aged Indian woman with left sided facial paralysis with her face in a neutral expression.">
+                    </div>
+                    <div id="Bells" class="tab-content">
+                   <img src="images/UnderstandingParalysisEye3.png" style="width:80%;height:auto;" alt="Image of a middle aged Indian woman with left sided facial paralysis trying to close her eye. The paralyzed eye rolls back and does not close, also known as Bell's reflex.">
+                  </div>  
+                  </div>
+              </section>
+        </div>
+        <div id="causes" class="page-section">
+        <h2>Causes</h2>
+        <p>There are many different causes for facial paralysis. It can be either <span class="highlight">congenital</span> (you are 
+            born with it) or <span class="highlight">acquired</span> (it happened after birth). If you weren’t born with it, there 
+            are two main reasons you are experiencing facial paralysis:
+           <ul id="causes-list">
+            <li>There is damage to the area of your brain that sends the signals to your face.</li>
+            <li>There is damage to your facial nerve and the signals aren’t going through.</li>
+            </ul>
+            Paralysis happens when there is damage to the nerve or brain due to:</p> 
+            <br>
+                <div class="icon-text-grid">
+                    <div class="icon-text-item">
+                         <img src="icons/Injury.png" alt="icon of a person with an injured head." style="width:70px;height:70px;">
+                         <p>Trauma</p>
+                    </div>
+                    <div class="icon-text-item">
+                        <img src="icons/CancerRibbon.png" alt="icon of a cancer ribbon." style="width:70px;height:70px;">
+                        <p>Cancer</p>
+                    </div>
+                    <div class="icon-text-item">
+                        <img src="icons/Inflammation.png" alt="icon of a flame." style="width:70px;height:70px;">
+                        <p>Inflammation</p>
+                    </div>
+                    <div class="icon-text-item">
+                        <img src="icons/Infection.png" alt="icon of viruses." style="width:70px;height:70px;">
+                        <p>Infectious Conditions (Bell’s, Ramsay-Hunt, etc)</p>
+                    </div>
+                     <div class="icon-text-item">
+                         <img src="icons/Brain.png" alt="icon of a brain." style="width:70px;height:70px;">
+                         <p>Stroke</p>
+                    </div>
+                    <div class="icon-text-item">
+                        <img src="icons/Ear.png" alt="icon of an ear." style="width:70px;height:70px;">
+                        <p>Acoustic Neuroma</p>
+                    </div>
+                    <div class="icon-text-item">
+                        <img src="icons/Bug.png" alt="icon of tick." style="width:70px;height:70px;">
+                        <p>Lyme Disease</p>
+                    </div>
+                    <div class="icon-text-item">
+                         <img src="icons/More.png" alt="elipses" style="width:70px;height:70px;">
+                        <p>More</p>
+                    </div>
+                </div>
+
+            <br><p>Examining your medical history and testing can help the 
+            doctor understand why your facial paralysis symptoms are happening as well as help you 
+            figure out a path forward.</p>
+        </div>
+        <div id="bellspalsy" class="page-section">
+        <div class="media-text-grid">
+           <div><h2>Bell's Palsy</h2>
+            <p>Bell’s Palsy is the most common cause of facial paralysis and is not your fault. It happens 
+            suddenly, and generally leaves one side of your face paralyzed (flaccid paralysis). <br><br>The 
+            cause is not known currently but it is thought to be due to viral inflammation or 
+            infection and can happen to anybody of any age.</p></div>
+            <img src="images/UnderstandingParalysisBells.png" alt="An image of a young nonbinary person with left-sided facial paralysis." style="width:100%;height:auto;">
+        </div>
+            <p><br><br>Most people will gradually improve and regain 
+            normal control of their facial muscles. It is expected that you will see improvement after a few 
+            weeks and complete recovery around the 12 month mark. For some people, the paralysis is permanent 
+            while others will develop <span class="highlight">synkinesis</span>, which is tightness and involuntary spasms of the face. 
+            Others can experience Bell’s episodes more than once but this is rare.</p> 
+            <br><br>
+                <p>If you feel like you might have Bell’s Palsy, even though it normally improves, it is still important to go see a doctor as 
+                soon as you can so they can track your progress.</p>
+        </div>
+        <div id="stages" class="page-section">
+        <h2>Stages</h2>
+        <section class="tab-section">
+            <div class="tabs-container">
+              <button class="tab-button active" data-target="solution1">
+                1. Flaccid (Complete)
+              </button>
+              <button class="tab-button" data-target="solution2">
+                2. Recovery
+              </button>
+              <button class="tab-button" data-target="solution3">
+                3. Incomplete
+              </button>
+              <button class="tab-button" data-target="solution4">
+                4. Synkinesis
+              </button>
+            </div>
+            <div class="tab-content-container">
+              <div id="solution1" class="tab-content active">
+                <img src="images/UnderstandingParalysisFlaccid.png" style="width:80%;height:auto;" alt="An image of an older white woman with left sided facial paralysis at the flaccid stage.">
+                    <h2>Flaccid (Complete) Facial Paralysis</h2>
+                    <p>
+                      At this stage you will have loss of movement and your face might feel floppy, you might have dry eyes, a dry mouth, altered taste, difficulty eating, speaking or drinking. 
+                      This stage happens because there is damage to the facial nerve and/or the signal is not being properly sent to the face.
+                    </p>
+                </div>
+              <div id="solution2" class="tab-content">
+                <img src="images/UnderstandingParalysisRecovering.png" style="width:80%;height:auto;" alt="An image of a younger black man with left sided facial paralysis at the recovery stage.">
+                    <h2>Recovering Facial Paralysis</h2>    
+                    <p>
+                      At this stage you may see symmetry improving with gradual increase in muscle strength. Focused muscle-strengthening exercises can help.
+                    </p>
+                </div>
+              <div id="solution3" class="tab-content">
+                <img src="images/UnderstandingParalysisIncomplete.png" style="width:80%;height:auto;" alt="An image of a younger middle eastern woman with left sided facial paralysis at the incomplete stage.">
+                    <h2>Incomplete Facial Paralysis</h2>
+                    <p>
+                      Despite recovery, there may be residual weakness at rest or with facial expressions.
+                    </p>
+                </div>
+              <div id="solution4" class="tab-content">
+                <img src="images/UnderstandingParalysisSynkinesis.png" style="width:80%;height:auto;" alt="An image of an older asian man with left sided facial paralysis trying to smile and his eye closed involuntarily as well.">
+                    <h2>Synkinesis <span style="color: #757575">(SIN-kigh-NEE-sis)</span></h2>
+                    <p>
+                      At this stage you might experience linked or unintended facial movements. When you try to move one part of your face, you might see involuntary movement in other areas.<br>
+                      <span style="color: #17a800; font-weight: bold;">Green</span> - Intended movement<br>
+                      <span style="color: #f90b0b; font-weight: bold;">Red</span> - Unintended movement
+                    </p>
+                </div>
+            </div>
+          </section>
+
+        <section class="care-point">
+            <img src="icons/CarePointIcon.png" alt="icon of two hands holding with a heart to the top left of them." style="width:50px;height:50px;">
+            <div id="care-point-text">    
+                <h3>Care Point</h3>
+                <p>Everyone has a unique journey with facial paralysis and it is important to understand that the stages outlined above are general guides but you might experience a different timeline.</p>
+             </div>
+            </section>
+        </div>
+        <div id="synkinesis" class="page-section">
+        <h2>Synkinesis</h2>
+        <p>Synkinesis <span style = "font-style: italic;">(SIN-kigh-NEE-sis)</span> is a <span class="highlight">long-term condition</span> that causes movement in muscles you did not mean to 
+            move. Synkinesis results when the facial nerve tries to heal itself (regenerate) but 
+            recovery results in “scrambled” or “mixed-up” signals as the nerve unintentionally grows 
+            into incorrect pathways. 
+            <br><br>If you think about smiling, normally only your mouth would move. 
+            With synkinesis, your eye might close as well. This is just one example, but can happen 
+            anywhere in the face.<br><br>
+
+            <section class="tab-section">
+            <div class="tabs-container">
+                    <button class="tab-button active" data-target="S1">
+                      Resting Face
+                     </button>
+                     <button class="tab-button" data-target="S2">
+                       Synkinesis Example 
+                     </button>
+                    </div>
+                     <div class="tab-content-container">
+                     <div id="S1" class="tab-content active">
+                       <img src="images/UnderstandingParalysisSynkinesis1.png" style="width:80%;height:auto;" alt="Image of a middle aged white woman with right-sided facial paralysis with her face in a resting state.">
+                    </div>
+                    <div id="S2" class="tab-content">
+                   <img src="images/UnderstandingParalysisSynkinesis2.png" style="width:80%;height:auto;" alt="Image of a middle aged white woman with right-sided facial paralysis smiling. The paralyized side is not moving and her expression is pulled to the left.">
+                   <p><span style="color: #17a800; font-weight: bold;">Green</span> - Intended movement<br>
+                      <span style="color: #f90b0b; font-weight: bold;">Red</span> - Unintended movement
+                    </p>
+                  </div>  
+                  </div>
+              </section>
+
+            Synkinesis will not go away by itself, but there are some things that you can do to help:</p>
+               
+                <div class="icon-and-list" style="display: flex; align-items: center;">
+                    <img src="icons/Botox.png" alt="icon of Botox vial and syringe." style="width:100px;height:auto;">
+                    <div id="icon-and-list-text"> 
+                    <p><span class="highlight">Botox</span> can relax the muscle with too many signals to it.</p>
+                    <a href="EDIT ME" class="button">Learn more about Botox</a>    
+                </div>
+                </div>
+
+                 <div class="icon-and-list" style="display: flex; align-items: center;">
+                    <img src="icons/PhysicalTherapy.png" alt="icon of person getting their face massaged." style="width:100px;height:auto;">
+                    <div id="icon-and-list-text"> 
+                    <p><span class="highlight">Physical therapy</span> can help you retrain your brain to move the muscles you are trying to move.</p>
+                    <a href="EDIT ME" class="button">Learn more about physical therapy</a>
+                    </div>
+                </div>
+
+                 <div class="icon-and-list" style="display: flex; align-items: center;">
+                    <img src="icons/Surgery.png" alt="icon of a scalpel."style="width:100px;height:auto;">
+                    <div id="icon-and-list-text"> 
+                    <p><span class="highlight">Surgery</span> can be done to remove specific branches of the facial nerve causing problematic movement. </p>
+                    <a href="EDIT ME" class="button">Learn more about surgery</a><a href="EDIT ME" class="button">Learn more about surgery</a>
+                </div>
+                </div>
+        </div>
+        <div id="recovery" class="page-section">
+        <h2>Recovery & Impacts</h2>
+        <p>Recovery is a journey and everyone will have a different path. There will be times that 
+            everything goes to plan and other times where it feels like you're at the bottom of a 
+            mountain. Your care team is there to support you throughout this process.<br><br>
+            Sometimes facial paralysis can improve and other times it is permanent. Every step in treatment, recovery 
+            and results is different for each person.
+            It is not vain or self-centered to mourn the loss of your face and to want your old face back. Even with intervention, 
+            you may not regain the same facial symmetry that you used to have.<br><br>
+            Many people have shared that they feel self-conscious, or want to isolate themselves after 
+            developing facial paralysis. It is important to ask for support and help through this time. 
+            Your care team will do what they can to help you.</p>
+            <img src="images/UnderstandingParalysisCareTeam.png" style="width: 70%" alt="Dr. Kevin Zuo and Dr. Heather Baltzer smiling and waving">
+        </div>
+  </main>
+</div>
+
+<!-- Insert print PDF button here -->
+<button onclick="openPDF()" id="pdfBtn" style="display: flex; align-items: center; gap: 6px;">
+    <img src="../icons/PrinterIcon.svg" alt="icon of a printer." style="width:20px;height:20px;">
+    Download the full page as a PDF
+</button>
+
+<!-- References section -->
+<div class="references-section">
+    <button class="references-toggle" onclick="toggleReferences()">
+        <span class="triangle"></span> References
+    </button>
+    <div class="references-content" id="referencesContent">
+        <ul>
+        <li>Cleveland Clinic medical. (2026, April 22). Facial paralysis: Causes, symptoms & treatment. Cleveland Clinic. Accessed May 2, 2026.</li>
+        <li>Hohman, M. H. (2024, October 6). Bell Palsy. StatPearls [Internet]. Accessed May 2, 2026.</li>
+        <li>Hohman, M. H. (2026, April 9). Facial nerve palsy. StatPearls [Internet]. Accessed May 2, 2026.</li>
+        <li>Mayo Foundation for Medical Education and Research. (2024, March 15). Bell’s Palsy. Mayo Clinic. Accessed May 2, 2026.</li>
+        <li>McHugh, C. I., Hartnick, C. J., Cohen, M. S., & Mokhtari, T. E. (2021, April 22). Unilateral facial paralysis. The Journal of pediatrics. Accessed May 2, 2026.</li>
+        <li>Ronthal, M., & Greenstein, P. (2025, July 14). Bell’s palsy: Pathogenesis, clinical features, and diagnosis in adults. UpToDate. Accessed May 2, 2026.</li>
+        <li>Rothman, M., & Greenstein, P. (2025, May 27). Bell’s palsy: Treatment and prognosis in adults. UpToDate. Accessed May 2, 2026.</li>
+        <li>Sanchez, A., Jaibir, P., & Jennifer, F. C. (2021, August 1). Facial paralysis: Timing of repair and management of the nonflaccidly paralyzed face. Current opinion in otolaryngology & head and neck surgery. Accessed May 2, 2026.</li>    
+        </ul>
+    </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-modal" id="lightboxModal">
+    <div class="lightbox-content">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    </div>
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">
+    <img src="icons/TopOfPageArrow.png" alt="icon of an arrow pointing to the top of the page." style="width:20px;height:20px;">Top of Page</button>
+
+
+<script>
+let mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    mybutton.style.display = "block";
+} else {
+    mybutton.style.display = "none";
+}
+}
+function topFunction() {
+document.documentElement.scrollTop = 0;
+document.body.scrollTop = 0;
+}
+
+// Lightbox functionality
+const lightboxModal = document.getElementById('lightboxModal');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+const screenshotImages = document.querySelectorAll('.screenshot-grid img');
+
+screenshotImages.forEach(img => {
+    img.addEventListener('click', function() {
+        lightboxModal.classList.add('active');
+        lightboxImg.src = this.src;
+        lightboxImg.alt = this.alt;
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+lightboxClose.addEventListener('click', function() {
+    lightboxModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+});
+
+lightboxModal.addEventListener('click', function(e) {
+    if (e.target === lightboxModal) {
+        lightboxModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
+        lightboxModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+});
+</script>
+</body>
+</html>
