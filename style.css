@@ -74,6 +74,149 @@ nav {
   position: relative; /* needed for dropdown positioning */
 }
 
+/* ----------- Index Page Styling ----------- */
+ .blue-block {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #49a4ff;
+  padding: 60px;
+  min-height: 600px;
+  overflow: hidden; /* the mask */
+}
+
+.block-text {
+  max-width: 50%;
+  color: #ffffff;
+  text-align: left;
+  z-index: 1; /* keeps text above the image if they ever overlap */
+}
+
+.block-image {
+  position: absolute;
+  bottom: -30%;
+  right: 5%;
+  height: 120%;
+  width: auto;
+  max-width: none; /* don't let this fight with the height-based sizing */
+  object-fit: cover;
+  background: transparent;
+}
+
+/* ---- MOBILE ---- */
+@media (max-width: 768px) {
+  .blue-block {
+    flex-direction: column;
+    align-items: center;
+    padding: 90px 24px;
+    min-height: 900px; 
+  }
+
+  .block-text {
+    max-width: 100%;
+    margin-bottom: 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* keeps text above the image if they ever overlap */
+  }
+
+  .block-image {
+    height: 75%;
+    bottom: -15%;
+
+    /* centering instead of right-anchoring */
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Index gallery grid */
+.gallery {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+/* CSS Grid Layout - 2 Column Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+  width: 80%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, white 0%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive Gallery */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .gallery h2 {
+    font-size: 2rem;
+  }
+  
+  .gallery-item img {
+    height: 250px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .gallery-grid {
+    gap: 1.5rem;
+  }
+}
+
 /* ----------- Naviguation links ----------- */
 .nav-links {
   display: flex;
