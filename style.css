@@ -226,7 +226,7 @@ nav {
 /* Sticky sidebar styling */
 .sidebar {
   position: sticky;
-  top: calc(5px + 1rem);
+  top: calc(5px + 6rem);
   height: fit-content;
   margin-top: 2rem;
   background-color: #f5f5f5;
@@ -300,7 +300,7 @@ nav {
         width: 100%;
 
         position: sticky;
-        top: 20px;
+        top: 120px;
         width: 100%;
         border-radius: 20px;
         
