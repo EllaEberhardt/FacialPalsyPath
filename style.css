@@ -165,9 +165,9 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .poster-grid {
+  .tutorial-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 0rem;
   }
 }
 
@@ -727,7 +727,7 @@ body {
 /* Sticky sidebar styling */
 .sidebar {
   position: sticky;
-  top: calc(5px + 6rem);
+  top: calc(5px + 7rem);
   height: fit-content;
   margin-top: 2rem;
   background-color: #f5f5f5;
@@ -801,7 +801,7 @@ body {
         width: 100%;
 
         position: sticky;
-        top: 120px;
+        top: 130px;
         width: 100%;
         border-radius: 20px;
         
@@ -827,7 +827,7 @@ body {
         display: none; /* Hide sidebar by default */
         width: 100%;
         position: sticky;
-        top: calc(60px + 3rem);
+        top: calc(60px + 4rem);
         height: fit-content;
          margin-top: 2rem;
         left: 0;
