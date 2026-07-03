@@ -14,10 +14,27 @@
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
-/* Controls logo image size */
+/* Logo scales with viewport instead of staying fixed at 90px */
+.logo-img {
+  height: clamp(40px, 9vw, 90px);
+  width: auto;
+  max-width: 500px;
+  min-width: 100px;
+  min-height: 100px;
+  display: block;
+}
+
 .logo {
-  max-height: 50px;
-  width: 100px;
+  /* padding instead of margin: guarantees space inside the header
+     rather than pushing against a min-height that might not grow */
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    min-height: 200px;
+    padding: 0.5rem 1.5rem;
+  }
 }
 
 /* ----------- Headings ----------- */
@@ -558,6 +575,7 @@ body {
   gap: 2rem;
 }
 
+
 /* Individual link styling */
 .nav-links a {
   color: #e3ebf8;
@@ -572,6 +590,7 @@ body {
 .nav-links a:hover {
   color: #ffffff;
   border-bottom: white solid 3px;
+  border-radius: 4px 4px 4px 4px;
 }
 
 /* Link Active Page indicator */
