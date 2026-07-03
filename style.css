@@ -138,6 +138,22 @@ nav {
   }
 }
 
+/*Index Poster grid*/
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .poster-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 /* Index gallery grid */
 .gallery {
   margin-top: 4rem;
@@ -1353,6 +1369,7 @@ main {
 
     html {
     scroll-behavior: smooth; /* Enables smooth scrolling */
+    scroll-padding-top: 60px; /* Offset for fixed header */
     }
 
 /* Section Button (same styling as #myBtn but inline) */
@@ -1377,6 +1394,7 @@ main {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 60px; /* Offset for fixed header */
 }
 
 /* ----------- Main Content Styling ----------- */
@@ -1627,6 +1645,13 @@ main {
 
 .references-section {
   margin-top: 1rem;
+    width:100%;
+    max-width:1180px;
+    background:var(--blue-dark);
+    border-radius:20px;
+    padding:1rem 2rem;
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(30,42,94,0.25);
 }
 
 .references-toggle {
