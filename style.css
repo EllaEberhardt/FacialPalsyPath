@@ -138,6 +138,22 @@ nav {
   }
 }
 
+/*Index Tutorial Grid*/
+.tutorial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .poster-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 /*Index Poster grid*/
 .poster-grid {
   display: grid;
@@ -857,16 +873,34 @@ body {
   opacity: 1;
 }
 
+/*Definition Index page styling*/
+
+.introduction-to-definition-page {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background-color: #c0e9c5;
+  border: 4px solid #629d69;
+  border-radius: 30px;
+  padding: 20px;
+  margin-top: 1rem;
+}
+
+#introduction-to-definition-text h3 {
+  color: #4f8856;
+}
+
 /*Care point styling*/
 
 .care-point {
-  display: inline-flex;
+  display: flex;
   align-items: flex-start;
   gap: 14px;
   background-color: #f5dee1;
   border: 4px solid #e97993;
   border-radius: 30px;
-  padding: 15px;
+  padding: 20px;
+  margin-top: 1rem;
 }
 
 #care-point-text h3 {
