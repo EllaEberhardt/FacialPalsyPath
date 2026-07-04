@@ -618,7 +618,7 @@ body {
     align-items: center;
   }
 
-  /* Hide normal nav, convert to dropdown menu */
+  /* Hide normal nav, convert to hamburger menu */
   .nav-links {
     display: none;
     position: absolute;
@@ -644,7 +644,7 @@ body {
   }
 }
 
-/* ----------- Dropdown Menu ----------- */
+/* ----------- Header Dropdown Menu ----------- */
 /* Dropdown menu position relative to parent */
 .nav-links li {
   position: relative;
@@ -661,8 +661,8 @@ body {
 }
 
 .nav-links .dropdown-toggle:hover {
-  color: #3498db;
-  border-bottom: 3px solid #3498db;
+  color: #ffffff;
+  border-bottom: 3px solid #ffffff;
 }
 
 
@@ -691,7 +691,7 @@ body {
 }
 
 .nav-links .dropdown-menu li a:hover {
-  background: #f1f1f1;
+  background: #69b1ff;
   color: #000;
 }
 
@@ -711,6 +711,9 @@ body {
 .nav-links .dropdown.open .dropdown-menu {
   display: block;
 }
+
+/* ----------- Header Items Dropdown ----------- */
+
 
 /* ----------- Sidebar menu ----------- */
 .container {

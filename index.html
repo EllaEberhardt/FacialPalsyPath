@@ -9,7 +9,70 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-<div data-include="components/header.html"></div>
+
+<header>
+    <nav>
+    <div class="logo">
+        <a href="../index.html" class="logo-link">
+        <img src="../icons/FacialPalsyPathLogo.png" alt="Home" class="logo-img">
+         </a>
+    </div>
+
+    <!-- Hidden checkbox -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <!-- Hamburger icon -->
+        <label for="menu-toggle" class="hamburger">
+             <span></span>
+             <span></span>
+             <span></span>
+            </label>
+        <div class="glass-overlay"></div>
+
+    <ul class="nav-links">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Understanding Anatomy</a>
+            <ul class="dropdown-menu">
+                <li><a href="../pages/UnderstandingAnatomy.html#nerves">Nerves</a></li>
+                <li><a href="../pages/UnderstandingAnatomy.html#facialnerve">Facial Nerve</a></li>
+                <li><a href="../pages/UnderstandingAnatomy.html#facialmuscles">Facial Muscles</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Understanding Facial Paralysis</a>
+            <ul class="dropdown-menu">
+                <li><a href="../pages/UnderstandingParalysis.html#whatisparalysis">What is Paralysis?</a></li>
+                <li><a href="../pages/UnderstandingParalysis.html#causes">Causes</a></li>
+                <li><a href="../pages/UnderstandingParalysis.html#bellspalsy">Bell's Palsy</a></li>
+                <li><a href="../pages/UnderstandingParalysis.html#stages">Stages</a></li>
+                <li><a href="../pages/UnderstandingParalysis.html#synkinesis">Synkinesis</a></li>
+                <li><a href="../pages/UnderstandingParalysis.html#recovery">Recovery & Impacts</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Patient Path</a>
+            <ul class="dropdown-menu">
+                <li><a href="../pages/PatientPath.html#firstsigns">First Signs</a></li>
+                <li><a href="../pages/PatientPath.html#attheclinic">At the Clinic</a></li>
+                <li><a href="../pages/PatientPath.html#athome">At Home</a></li>
+                <li><a href="../pages/PatientPath.html#onsurgeryday">On Surgery Day</a></li>
+                <li><a href="../pages/PatientPath.html#yourteam">Your Team</a></li>
+            </ul>
+        </li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Your Treatment</a>
+            <ul class="dropdown-menu">
+                <li><a href="../pages/YourTreatment.html#intro">Intro</a></li>
+                <li><a href="../pages/YourTreatment.html#non-surgical">Non-Surgical Options</a></li>
+                <li><a href="../pages/YourTreatment.html#surgical-static">Surgical Options: Static</a></li>
+                <li><a href="../pages/YourTreatment.html#surgical-dynamic">Surgical Options: Dynamic</a></li>
+            </ul>
+        </li>
+        <li><a href="../pages/About.html">About FacialPalsyPath</a></li>
+        <li><a href="../pages/About.html#contact-section">Contact Us</a></li>
+    </ul>
+    </nav>
+</header>
 
 <main>
 
@@ -48,7 +111,7 @@
                     <img src="icons/definition.svg" alt="icon of a book and magnifying glass" style="width:50px;height:50px;">
                     <div id="introduction-to-definition-text">    
                         <h3>Definitions</h3>
-                        <p>You can hover over any text that has an <span class = "definition" definition-text="Just like that!">underline</span> to get a definition of that word.</p>
+                        <p>You can hover over any text that has an <span class = "definition" definition-text="Just like that!">underline</span> to get a definition of that word.<br><br> On mobile, tap the word and tap anywhere off it to close.</p>
                     </div>
                 </section>
                 <section class="care-point">
@@ -62,7 +125,7 @@
                     <img src="icons/LightBulb.svg" alt="icon of a lightbulb." style="width:50px;height:50px;">
                     <div id="tutorial-text">    
                         <h3>Extra Info</h3>
-                        <p>These boxes will give you some guidance or extra information related to <span style="font-weight: bold;font-style: italic;">FacialPalsyPath</span>.</p>
+                        <p>These boxes will give you some guidance on how to use the site or extra information related to <span style="font-weight: bold;font-style: italic;">FacialPalsyPath</span>.</p>
                     </div>
                 </section>
             </div> 
@@ -172,7 +235,30 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top">
     <img src="icons/TopOfPageArrow.png" alt="icon of an arrow pointing to the top of the page." style="width:20px;height:20px;">Top of Page</button>
 
-<div data-include="components/footer.html"></div>
+<footer>
+    <div class="footer-content">
+    <div class="footer-section">
+        <h3>FacialPalsyPath</h3>
+        <p>This resource was created for people to learn more about facial paralysis</p>
+        <a href="../pages/About.html" style="font-weight: bold;">More about FacialPalsyPath</a>
+        <br><br>
+        <p>Have any questions or suggestions for us? Reach out using our <a href="../pages/About.html#contact-section" style="font-weight: bold;">contact form</a></p>
+    </div>
+    <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+        <li><a href="../pages/UnderstandingAnatomy.html">Understanding Anatomy</a></li>
+        <li><a href="../pages/UnderstandingParalysis.html">Understanding Facial Paralysis</a></li>
+        <li><a href="../pages/PatientPath.html">Patient Path</a></li>
+        <li><a href="../pages/YourTreatment.html">Your Treatment</a></li>
+        <li><a href="../pages/About.html">About FacialPalsyPath</a></li>
+        </ul>
+    </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 FacialPalsyPath Ella Eberhardt. All rights reserved.</p>
+    </div>
+</footer> 
 
 <script>
 let mybutton = document.getElementById("myBtn");
