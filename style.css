@@ -1997,5 +1997,20 @@ img {
   .menu-toggle:checked + .hamburger span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
   }
+  
+  /* ----------- Disable dropdowns on mobile ----------- */
+/* Only the top-level nav-links should show; dropdown-menus stay hidden permanently,
+   overriding the hover/open rules that reveal them on desktop */
+.nav-links .dropdown-menu,
+.nav-links .dropdown:hover .dropdown-menu,
+.nav-links .dropdown-menu:hover,
+.nav-links .dropdown.open .dropdown-menu {
+  display: none !important;
+}
+
+/* Dropdown toggles behave like plain nav links on mobile (no submenu to open) */
+.nav-links .dropdown-toggle {
+  cursor: default;
+}
 
 }
