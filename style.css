@@ -575,6 +575,26 @@ body {
   gap: 2rem;
 }
 
+/* ----------- Branching Images Grid ----------- */
+.branching-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.branching-images img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .branching-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
 
 /* Individual link styling */
 .nav-links a {
