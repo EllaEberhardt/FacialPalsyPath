@@ -99,6 +99,16 @@ document.addEventListener('DOMContentLoaded', () => {
       sidebar.classList.toggle('open');
     });
 
+    const closeSidebarOnOutsideTap = (event) => {
+      const clickedInsideSidebar = sidebar.contains(event.target) || sidebarButton.contains(event.target);
+      if (!clickedInsideSidebar && sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+      }
+    };
+
+    document.addEventListener('click', closeSidebarOnOutsideTap);
+    document.addEventListener('touchstart', closeSidebarOnOutsideTap);
+
     document.querySelectorAll('.sidebar a').forEach(link => {
       link.addEventListener('click', () => {
         sidebar.classList.remove('open');
