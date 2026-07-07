@@ -892,8 +892,11 @@ body {
 .definition::after {
   content: attr(definition-text);
   position: fixed;
-  left: var(--tx, 0px);
-  top: var(--ty, 0px);       /* follows cursor via JS */
+  /* clamp horizontal position so the box (max 220px + padding) never overflows left/right */
+  left: clamp(8px, var(--tx, 0px), calc(100vw - 244px));
+  /* clamp vertical position with a generous estimated max height */
+  top: clamp(8px, var(--ty, 0px), calc(100vh - 120px));
+
   background: #c0ddfa;
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
@@ -903,9 +906,17 @@ body {
   font-size: 0.85rem;
   color: #2382e1;
   box-shadow: 0 4px 16px rgba(0, 60, 160, 0.15);
-  max-width: 220px;
+
+  box-sizing: border-box;
+  width: max-content;
+  max-width: min(220px, calc(100vw - 24px)); /* also shrinks on narrow screens */
   white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
   line-height: 1.4;
+
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s ease;
