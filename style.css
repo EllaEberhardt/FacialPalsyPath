@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .logo-link:hover {
@@ -28,6 +29,15 @@
   /* padding instead of margin: guarantees space inside the header
      rather than pushing against a min-height that might not grow */
   padding: 0.5rem 0.5rem 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
+
+.logo h3 {
+  margin: 0;
+  font-size: 25px;
+  font-style: italic; /* remove default h3 margins so it aligns cleanly */
 }
 
 @media (max-width: 768px) {
@@ -572,7 +582,11 @@ body {
   display: flex;
   list-style: none;
   transition: all 0.3s ease;
-  gap: 2rem;
+  gap: 1rem;
+  padding-left: 2rem;
+  flex-wrap: wrap;       /* let items drop to a new line instead of overflowing */
+  max-width: 100%;       /* never exceed the viewport/parent width */
+  box-sizing: border-box;
 }
 
 /* ----------- Branching Images Grid ----------- */
@@ -604,6 +618,8 @@ body {
   padding-bottom: 0.25rem;
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  overflow-wrap: break-word;
 }
 
 /* Link Hover Effects */
@@ -629,7 +645,6 @@ body {
 
   .logo {
     height: clamp(40px, 10vw, 55px); /* responsive mobile logo */
-    transform: translate(-30px, -30px);
   }
 
   nav {
@@ -669,6 +684,7 @@ body {
 /* Dropdown menu position relative to parent */
 .nav-links li {
   position: relative;
+  min-width: 0; 
 }
 
 /* Dropdown toggle styling */
