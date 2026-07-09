@@ -16,6 +16,10 @@ async function loadIncludes() {
 // ─── Tab functionality ─────────────────────────────────────────────────────────
 function initTabs() {
   document.querySelectorAll('.tab-section').forEach(section => {
+    // Prevent double-binding if initTabs() runs more than once on the same section
+    if (section.dataset.tabsInitialized === 'true') return;
+    section.dataset.tabsInitialized = 'true';
+
     const buttons = section.querySelectorAll('.tab-button');
     const contents = section.querySelectorAll('.tab-content');
 
@@ -38,7 +42,9 @@ function initTabs() {
         button.classList.add('active');
 
         const targetID = button.getAttribute('data-target');
-        const targetEl = document.getElementById(targetID);
+        // Scope the lookup to THIS section so duplicate ids elsewhere on the
+        // page (e.g. the same component reused) can't steal the match.
+        const targetEl = section.querySelector('#' + CSS.escape(targetID));
         if (targetEl) targetEl.classList.add('active');
       });
     });
