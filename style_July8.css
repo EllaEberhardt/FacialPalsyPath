@@ -1292,13 +1292,6 @@ main {
     display: block;
 }
 
-.tab-img {
-    width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
 /* Mobile responsive tabs - prevent overflow on small screens */
 @media (max-width: 768px) {
   .tabs-container {
@@ -1313,12 +1306,9 @@ main {
   }
 
   .tab-content {
-    width: 100%;
-  }
-
-  .tab-img {
-    width: 100%;
-  }
+    width: 150%;
+    transform-origin: center;
+}
 }
 
 /* ── Frosted-glass toggle button ─────────────────────────────────────────── 
