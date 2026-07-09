@@ -1292,13 +1292,6 @@ main {
     display: block;
 }
 
-.tab-img {
-    width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
 /* Mobile responsive tabs - prevent overflow on small screens */
 @media (max-width: 768px) {
   .tabs-container {
@@ -1310,14 +1303,6 @@ main {
     flex: 1 1 100%;
     width: 100%;
     margin: 0.25rem 0;
-  }
-
-  .tab-content {
-    width: 100%;
-  }
-
-  .tab-img {
-    width: 100%;
   }
 }
 
