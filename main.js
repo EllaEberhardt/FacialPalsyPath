@@ -15,6 +15,8 @@ async function loadIncludes() {
 
 // ─── Tab functionality ─────────────────────────────────────────────────────────
 function initTabs() {
+  initTabButtonToggles();
+
   document.querySelectorAll('.tab-section').forEach(section => {
     // Prevent double-binding if initTabs() runs more than once on the same section
     if (section.dataset.tabsInitialized === 'true') return;
@@ -34,6 +36,10 @@ function initTabs() {
       contents[0].classList.add('active');
     }
 
+    // Keep this section's dropdown toggle label (if any) in sync with whichever
+    // tab-button is active
+    updateTabButtonToggleLabel(section);
+
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         buttons.forEach(btn => btn.classList.remove('active'));
@@ -46,9 +52,64 @@ function initTabs() {
         // page (e.g. the same component reused) can't steal the match.
         const targetEl = section.querySelector('#' + CSS.escape(targetID));
         if (targetEl) targetEl.classList.add('active');
+
+        // Reflect the newly-selected tab in the dropdown toggle, then close it
+        updateTabButtonToggleLabel(section);
+        closeTabButtonDropdown(section);
       });
     });
   });
+}
+
+// ─── Tab-button toggle (mobile dropdown) ───────────────────────────────────────
+// Same idea as the sidebar toggle, but scoped to its own .tab-section only —
+// it never affects any other tab-section on the page. Shows the active tab's
+// label as the toggle text, and closes itself when clicking/tapping outside.
+function initTabButtonToggles() {
+  document.querySelectorAll('.tab-button-toggle').forEach(toggle => {
+    // Prevent double-binding if this runs more than once on the same button
+    if (toggle.dataset.toggleInitialized === 'true') return;
+    toggle.dataset.toggleInitialized = 'true';
+
+    const tabSection = toggle.closest('.tab-section');
+    if (!tabSection) return;
+
+    updateTabButtonToggleLabel(tabSection);
+
+    toggle.addEventListener('click', () => {
+      const isOpen = tabSection.classList.toggle('tab-buttons-open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    const closeOnOutsideInteraction = (event) => {
+      if (!tabSection.contains(event.target)) {
+        closeTabButtonDropdown(tabSection);
+      }
+    };
+
+    document.addEventListener('click', closeOnOutsideInteraction);
+    document.addEventListener('touchstart', closeOnOutsideInteraction);
+  });
+}
+
+// Sets a tab-section's dropdown toggle text to match its currently active tab
+function updateTabButtonToggleLabel(tabSection) {
+  const toggle = tabSection.querySelector('.tab-button-toggle');
+  if (!toggle) return;
+
+  const activeButton = tabSection.querySelector('.tab-button.active') || tabSection.querySelector('.tab-button');
+  if (activeButton) {
+    toggle.textContent = activeButton.textContent.trim();
+  }
+}
+
+// Closes a tab-section's dropdown (no-op if it has no toggle or is already closed)
+function closeTabButtonDropdown(tabSection) {
+  const toggle = tabSection.querySelector('.tab-button-toggle');
+  if (!toggle) return;
+
+  tabSection.classList.remove('tab-buttons-open');
+  toggle.setAttribute('aria-expanded', 'false');
 }
 
 // ─── On DOM ready ──────────────────────────────────────────────────────────────
