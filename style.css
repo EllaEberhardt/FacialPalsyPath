@@ -1283,6 +1283,7 @@ main {
     cursor: pointer;
   }
 
+
 .tab-content {
     display: none;
     padding: 20px;
@@ -1290,6 +1291,13 @@ main {
 
 .tab-content.active {
     display: block;
+}
+
+.tab-img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .tab-button-toggle {display: none;}
