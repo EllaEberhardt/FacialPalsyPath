@@ -156,27 +156,30 @@
             <p>Have any questions or feedback about the design or development of <span style="font-weight: bold;font-style:italic">FacialPalsyPath</span>? 
                 <br><br>Feel free to reach out using the contact form below or by emailing <a href="mailto:ellaeberhar@gmail.com">ellaeberhar@gmail.com</a>
                 <br><br>For medical inquiries, please contact a healthcare provider.</p><br>
-            <form>
-              <div class="form-row">
-                <div class="field">
-                  <label for="fullname">Full Name</label>
-                  <input type="text" id="fullname" placeholder="Your full name">
+            <form
+                action="https://formspree.io/f/xzdnrger"
+                method="POST"
+                >
+                <div class="form-row">
+                    <div class="field">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+                    </div>
                 </div>
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input type="text" id="email" placeholder="Your email">
+                <div class="field" style="margin-bottom:20px;">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Type your subject here" required>
                 </div>
-              </div>
-              <div class="field" style="margin-bottom:20px;">
-                <label for="message">Subject</label>
-                <input type="text" id="message" placeholder="Type your subject here">
-              </div>
-              <div class="field" style="margin-bottom:20px;">
-                <label for="message">Your Message</label>
-                <textarea id="message" placeholder="Type your message here"></textarea>
-              </div>
+                <div class="field" style="margin-bottom:20px;">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Type your message here" required></textarea>
+                </div>
 
-              <button type="submit" class="button">Send Message</button>
+                <button type="submit" class="button">Send Message</button>
             </form>
 
           </div>
