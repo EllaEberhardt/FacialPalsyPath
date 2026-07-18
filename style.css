@@ -1304,6 +1304,10 @@ main {
 
 /* Mobile responsive tabs - prevent overflow on small screens */
 @media (max-width: 768px) {
+  .tab-toggle-wrap {
+    position: relative;
+  }
+
   .tabs-container {
     flex-direction: column;
     gap: 0.5rem;
@@ -1352,12 +1356,17 @@ main {
     }
 
     .tab-section.tab-buttons-open .tabs-container {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         background: #fff;
         border-radius: 20px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         padding: 8px;
         margin-top: 8px;
         gap: 0;
+        z-index: 20;
     }
 }
 

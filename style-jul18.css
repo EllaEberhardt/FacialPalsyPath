@@ -1283,6 +1283,7 @@ main {
     cursor: pointer;
   }
 
+
 .tab-content {
     display: none;
     padding: 20px;
@@ -1290,6 +1291,13 @@ main {
 
 .tab-content.active {
     display: block;
+}
+
+.tab-img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .tab-button-toggle {display: none;}
@@ -1304,14 +1312,11 @@ main {
   .tab-button-toggle {
         display: block; /* Show button on mobile */
         width: 100%;
-
-        position: sticky;
-        top: 110px;
         width: 100%;
         border-radius: 20px;
         
-        background: #007bff;
-        color: white;
+        background: #c9d7ff;
+        color: #0080ff;
         text-align: left;
         padding: 10px;
         font: inherit;
@@ -1326,20 +1331,33 @@ main {
     content: "▼";
     padding-right: 8px;
     float: right;
+    transition: transform 0.2s ease;
+    }
+
+    .tab-section.tab-buttons-open .tab-button-toggle::after {
+        transform: rotate(180deg);
     }
 
     .tab-button {
-        display: none; /* Hide sidebar by default */
+        display: none; /* Hidden by default, shown only within its own open tab-section */
         width: 100%;
-        position: sticky;
-        top: calc(60px + 4rem);
-        height: fit-content;
-         margin-top: 2rem;
-        left: 0;
+        border-radius: 20px;
+        margin: 0;
+    }
+
+    /* Class added by JavaScript (scoped to this tab-section only) to show its buttons
+       as a dropdown-style list beneath the toggle */
+    .tab-section.tab-buttons-open .tab-button {
+        display: block;
+    }
+
+    .tab-section.tab-buttons-open .tabs-container {
         background: #fff;
         border-radius: 20px;
-        z-index: 100;
-        overflow-y: auto;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        padding: 8px;
+        margin-top: 8px;
+        gap: 0;
     }
 }
 
