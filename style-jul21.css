@@ -1289,7 +1289,7 @@ main {
     50% { background-color: #c9d7ff; }
   }
 
-  .tab-section.in-view .tab-button.active + .tab-button {
+  .tab-button.active + .tab-button {
     animation: tabNeighborFlash 0.8s ease-in-out 3;
   }
 }

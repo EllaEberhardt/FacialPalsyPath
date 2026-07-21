@@ -16,7 +16,6 @@ async function loadIncludes() {
 // ─── Tab functionality ─────────────────────────────────────────────────────────
 function initTabs() {
   initTabButtonToggles();
-  initTabNeighborFlashOnView();
 
   document.querySelectorAll('.tab-section').forEach(section => {
     // Prevent double-binding if initTabs() runs more than once on the same section
@@ -59,36 +58,6 @@ function initTabs() {
         closeTabButtonDropdown(section);
       });
     });
-  });
-}
-
-// ─── Tab-neighbor flash: replay every time the tab section scrolls into view ──
-// (instead of playing immediately on page load). Toggles .in-view on the
-// .tab-section as it enters/leaves the viewport; style.css uses that class to
-// gate the tabNeighborFlash animation, so it replays each time it re-enters.
-function initTabNeighborFlashOnView() {
-  const sections = document.querySelectorAll('.tab-section');
-
-  const flashObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      } else {
-        // Remove the class when it scrolls out so the animation can
-        // replay (via re-adding .in-view) the next time it scrolls back in
-        entry.target.classList.remove('in-view');
-      }
-    });
-  }, {
-    threshold: 0.3 // fires once ~30% of the tab section is visible
-  });
-
-  sections.forEach(section => {
-    // Prevent double-observing if initTabs() runs more than once on the same section
-    if (section.dataset.flashObserverInitialized === 'true') return;
-    section.dataset.flashObserverInitialized = 'true';
-
-    flashObserver.observe(section);
   });
 }
 
