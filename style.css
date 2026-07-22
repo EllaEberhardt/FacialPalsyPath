@@ -822,6 +822,7 @@ body {
         position: sticky;
         top: 110px;
         width: 100%;
+        z-index: 150; /* keep above .sidebar (100) and the tab dropdown (20) */
         border-radius: 20px;
         
         background: #007bff;
