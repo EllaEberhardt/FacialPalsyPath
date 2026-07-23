@@ -1346,26 +1346,20 @@ main {
     margin-bottom: 0.75rem;
   }
 
-  /* Row holding the prev arrow, image, and next arrow.
-     The arrows are overlaid on top of the image (rather than sitting
-     beside it in the flex row) so the image itself keeps the same
-     full-width size as the non-tab images elsewhere on the page. */
+  /* Row holding the prev arrow, image, and next arrow */
   .tab-content-nav {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
   }
 
   .tab-content-nav .tab-content-container {
-    width: 100%;
+    flex: 1;
+    min-width: 0; /* allow the image to shrink inside the flex row */
   }
 
   .tab-content-nav .tab-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1379,15 +1373,6 @@ main {
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  }
-
-  .tab-content-nav .tab-arrow-prev {
-    left: 5px;
-  }
-
-  .tab-content-nav .tab-arrow-next {
-    right: 5px;
   }
 
   .tab-content-nav .tab-arrow:hover:not(:disabled) {
