@@ -85,7 +85,10 @@ header {
   top: 0;
   width: 100%;
   min-height: 100px;
-  z-index: 100;
+  z-index: 500; /* raised above .sidebar-toggle (150) so the hamburger menu,
+                   which is nested inside header, always paints on top of it.
+                   Kept below .lightbox-modal (1000) so the image lightbox can
+                   still cover the header when open. */
   display: flex;
   align-items: center;
   justify-content: space-between;
