@@ -15,6 +15,7 @@ async function loadIncludes() {
 
 // ─── Tab functionality ─────────────────────────────────────────────────────────
 function initTabs() {
+  initTabButtonToggles();
   initTabNeighborFlashOnView();
 
   document.querySelectorAll('.tab-section').forEach(section => {
@@ -36,10 +37,9 @@ function initTabs() {
       contents[0].classList.add('active');
     }
 
-    // Wire up the mobile prev/next arrows once, and sync the mobile title +
-    // arrow disabled-state with whichever tab-button is active
-    initTabArrowNav(section, buttons);
-    updateTabArrowNav(section, buttons);
+    // Keep this section's dropdown toggle label (if any) in sync with whichever
+    // tab-button is active
+    updateTabButtonToggleLabel(section);
 
     buttons.forEach(button => {
       button.addEventListener('click', () => {
@@ -54,51 +54,12 @@ function initTabs() {
         const targetEl = section.querySelector('#' + CSS.escape(targetID));
         if (targetEl) targetEl.classList.add('active');
 
-        // Keep the mobile title text and arrow disabled-state in sync
-        updateTabArrowNav(section, buttons);
+        // Reflect the newly-selected tab in the dropdown toggle, then close it
+        updateTabButtonToggleLabel(section);
+        closeTabButtonDropdown(section);
       });
     });
   });
-}
-
-// ─── Mobile tab arrow-nav (prev/next arrows + title, replaces the old dropdown) ─
-// Wires up the prev/next arrow clicks for a tab-section (once per section) by
-// simply clicking the neighboring .tab-button, so all the normal tab-switching
-// logic above still runs unchanged.
-function initTabArrowNav(section, buttons) {
-  const prevBtn = section.querySelector('.tab-arrow-prev');
-  const nextBtn = section.querySelector('.tab-arrow-next');
-
-  if (prevBtn && prevBtn.dataset.arrowInitialized !== 'true') {
-    prevBtn.dataset.arrowInitialized = 'true';
-    prevBtn.addEventListener('click', () => {
-      const idx = [...buttons].findIndex(b => b.classList.contains('active'));
-      if (idx > 0) buttons[idx - 1].click();
-    });
-  }
-
-  if (nextBtn && nextBtn.dataset.arrowInitialized !== 'true') {
-    nextBtn.dataset.arrowInitialized = 'true';
-    nextBtn.addEventListener('click', () => {
-      const idx = [...buttons].findIndex(b => b.classList.contains('active'));
-      if (idx !== -1 && idx < buttons.length - 1) buttons[idx + 1].click();
-    });
-  }
-}
-
-// Updates the mobile title text and fades/disables whichever arrow has
-// nothing left to select in that direction
-function updateTabArrowNav(section, buttons) {
-  const prevBtn = section.querySelector('.tab-arrow-prev');
-  const nextBtn = section.querySelector('.tab-arrow-next');
-  const titleEl = section.querySelector('.tab-mobile-title');
-
-  const idx = [...buttons].findIndex(b => b.classList.contains('active'));
-  if (idx === -1) return;
-
-  if (titleEl) titleEl.textContent = buttons[idx].textContent.trim();
-  if (prevBtn) prevBtn.disabled = idx <= 0;
-  if (nextBtn) nextBtn.disabled = idx >= buttons.length - 1;
 }
 
 // ─── Tab-neighbor flash: replay every time the tab section scrolls into view ──
@@ -129,6 +90,57 @@ function initTabNeighborFlashOnView() {
 
     flashObserver.observe(section);
   });
+}
+
+// ─── Tab-button toggle (mobile dropdown) ───────────────────────────────────────
+// Same idea as the sidebar toggle, but scoped to its own .tab-section only —
+// it never affects any other tab-section on the page. Shows the active tab's
+// label as the toggle text, and closes itself when clicking/tapping outside.
+function initTabButtonToggles() {
+  document.querySelectorAll('.tab-button-toggle').forEach(toggle => {
+    // Prevent double-binding if this runs more than once on the same button
+    if (toggle.dataset.toggleInitialized === 'true') return;
+    toggle.dataset.toggleInitialized = 'true';
+
+    const tabSection = toggle.closest('.tab-section');
+    if (!tabSection) return;
+
+    updateTabButtonToggleLabel(tabSection);
+
+    toggle.addEventListener('click', () => {
+      const isOpen = tabSection.classList.toggle('tab-buttons-open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    const closeOnOutsideInteraction = (event) => {
+      if (!tabSection.contains(event.target)) {
+        closeTabButtonDropdown(tabSection);
+      }
+    };
+
+    document.addEventListener('click', closeOnOutsideInteraction);
+    document.addEventListener('touchstart', closeOnOutsideInteraction);
+  });
+}
+
+// Sets a tab-section's dropdown toggle text to match its currently active tab
+function updateTabButtonToggleLabel(tabSection) {
+  const toggle = tabSection.querySelector('.tab-button-toggle');
+  if (!toggle) return;
+
+  const activeButton = tabSection.querySelector('.tab-button.active') || tabSection.querySelector('.tab-button');
+  if (activeButton) {
+    toggle.textContent = activeButton.textContent.trim();
+  }
+}
+
+// Closes a tab-section's dropdown (no-op if it has no toggle or is already closed)
+function closeTabButtonDropdown(tabSection) {
+  const toggle = tabSection.querySelector('.tab-button-toggle');
+  if (!toggle) return;
+
+  tabSection.classList.remove('tab-buttons-open');
+  toggle.setAttribute('aria-expanded', 'false');
 }
 
 // ─── On DOM ready ──────────────────────────────────────────────────────────────

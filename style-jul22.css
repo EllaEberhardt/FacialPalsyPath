@@ -1311,78 +1311,74 @@ main {
   margin: 0 auto;
 }
 
-/* Mobile-only title bar shown above the image, and the prev/next arrows
-   flanking it. Both hidden on desktop; the desktop tab-button row (the
-   .tabs-container buttons) handles switching there instead. */
-.tab-mobile-title { display: none; }
-
-.tab-content-nav .tab-arrow {
-  display: none;
-}
+.tab-button-toggle {display: none;}
 
 /* Mobile responsive tabs - prevent overflow on small screens */
 @media (max-width: 768px) {
+  .tab-toggle-wrap {
+    position: relative;
+  }
 
-  /* The row of tab-buttons is replaced by the title + arrows on mobile */
   .tabs-container {
-    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  /* Title bar - same look the dropdown toggle used to have, just static
-     and centered instead of a clickable dropdown */
-  .tab-mobile-title {
-    display: block;
-    width: 100%;
-    border-radius: 20px;
-    background: #c9d7ff;
-    color: #0080ff;
-    text-align: center;
-    padding: 10px;
-    font: inherit;
-    font-weight: bold;
-    margin-bottom: 0.75rem;
-  }
+  .tab-button-toggle {
+        display: block; /* Show button on mobile */
+        width: 100%;
+        width: 100%;
+        border-radius: 20px;
+        
+        background: #c9d7ff;
+        color: #0080ff;
+        text-align: left;
+        padding: 10px;
+        font: inherit;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
 
-  /* Row holding the prev arrow, image, and next arrow */
-  .tab-content-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
+        transition: all 0.3s;
+    }
 
-  .tab-content-nav .tab-content-container {
-    flex: 1;
-    min-width: 0; /* allow the image to shrink inside the flex row */
-  }
+    .tab-button-toggle::after{
+    content: "▼";
+    padding-right: 8px;
+    float: right;
+    transition: transform 0.2s ease;
+    }
 
-  .tab-content-nav .tab-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background: #c9d7ff;
-    color: #0080ff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
+    .tab-section.tab-buttons-open .tab-button-toggle::after {
+        transform: rotate(180deg);
+    }
 
-  .tab-content-nav .tab-arrow:hover:not(:disabled) {
-    background: #0080ff;
-    color: #ffffff;
-  }
+    .tab-button {
+        display: none; /* Hidden by default, shown only within its own open tab-section */
+        width: 100%;
+        border-radius: 20px;
+        margin: 0;
+    }
 
-  /* Faded + inert when there's no tab in that direction */
-  .tab-content-nav .tab-arrow:disabled {
-    opacity: 0.3;
-    cursor: default;
-    pointer-events: none;
-  }
+    /* Class added by JavaScript (scoped to this tab-section only) to show its buttons
+       as a dropdown-style list beneath the toggle */
+    .tab-section.tab-buttons-open .tab-button {
+        display: block;
+    }
+
+    .tab-section.tab-buttons-open .tabs-container {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        padding: 8px;
+        margin-top: 8px;
+        gap: 0;
+        z-index: 20;
+    }
 }
 
 /* ----------- Buttons ----------- */

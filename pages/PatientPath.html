@@ -99,8 +99,6 @@
         <br>
         <h3><span style="font-style: italic;">Example exercises the doctor may ask you to do:</span></h3>
         <section class="tab-section">
-            <div class="tab-toggle-wrap">
-            <button class="tab-button-toggle" id="tabButtonToggle">Toggle</button>
             <div class="tabs-container">
                     <button class="tab-button active" data-target="eyebrows">
                       Raise your eyebrows
@@ -127,7 +125,11 @@
                        Show your bottom teeth 
                     </button>
             </div>
-            </div>
+
+            <div class="tab-mobile-title"></div>
+
+            <div class="tab-content-nav">
+                <button class="tab-arrow tab-arrow-prev" aria-label="Previous">&#10094;</button>
                     <div class="tab-content-container">
                         <div id="eyebrows" class="tab-content active">
                             <img src="../images/PatientPathEyebrows.png" style="width:60%; height:auto;" class="tab-img" alt="Image of a latina woman with left-sided facial paralysis raising her eyebrows.">
@@ -154,6 +156,8 @@
                             <img src="../images/PatientPathLowerTeeth.png" style="width:60%; height:auto;" class="tab-img" alt="Image of a latina woman with left-sided facial paralysis showing her lower teeth.">
                         </div> 
                     </div>
+                <button class="tab-arrow tab-arrow-next" aria-label="Next">&#10095;</button>
+            </div>
         </section>
 
         <br>
